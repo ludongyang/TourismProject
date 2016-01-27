@@ -1597,6 +1597,7 @@
 				95EFB87A1C492946006CFC9D /* Application */,
 				95EFB87D1C492946006CFC9D /* BaseClass */,
 				95EFB87E1C492946006CFC9D /* CodeClass */,
+				95EFB8831C492946006CFC9D /* Header */,
 				95EFB8821C492946006CFC9D /* Framework */,
 				95EFB8881C492946006CFC9D /* Resources */,
 				95EFB8891C492946006CFC9D /* TheThird */,
@@ -1773,7 +1774,6 @@
 				95E76FC81C57CC7400FFBA9E /* searchUTableViewCell.h */,
 				95E76FC91C57CC7400FFBA9E /* searchUTableViewCell.m */,
 				95E76FCA1C57CC7400FFBA9E /* searchUTableViewCell.xib */,
-				95EFB8831C492946006CFC9D /* Header */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1796,8 +1796,7 @@
 				95EFB8871C492946006CFC9D /* URLHeader.h */,
 				95EFB8A21C492A68006CFC9D /* PrefixHeader.pch */,
 			);
-			name = Header;
-			path = ../../Header;
+			path = Header;
 			sourceTree = "<group>";
 		};
 		95EFB8881C492946006CFC9D /* Resources */ = {

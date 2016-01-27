@@ -78,12 +78,12 @@ static NSString * const reuseStoryDetailIdentifier = @"reuseStoryDetailIdentifie
     
     
     CGFloat scale  = [model.photo_width floatValue]/[model.photo_height floatValue];
-    CGRect  rect = [model.text boundingRectWithSize:CGSizeMake(kWidth-2*kGap, 10000) options:(NSStringDrawingUsesLineFragmentOrigin) attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17]} context:nil];
+    CGRect  rect = [model.text boundingRectWithSize:CGSizeMake(kWidth-2*kGap, 10000) options:(NSStringDrawingUsesLineFragmentOrigin) attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15]} context:nil];
     
     
     if (!isnan(scale)) {
         
-        return (kWidth-kGap)*scale+rect.size.height;
+        return (kWidth-kGap)/scale+rect.size.height;
         
     }
     return rect.size.height+30;

@@ -130,15 +130,7 @@
             
         }else if(indexPath.row == 1) {
 //            性别
-            UIView * view1 = [[UIView alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
-            
-            DropupMenu * menu = [DropupMenu menu];
-            GenderController * genderVC = [[GenderController alloc] init];
-            genderVC.view.height = 100;
-            genderVC.view.width = 100;
-            menu.contentController = genderVC;
-            
-            [menu showFrom:view1];
+           
             
         }else if (indexPath.row == 2){
             

@@ -212,8 +212,6 @@
 		95EE46481C56428000960B2C /* DropupMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EE46471C56428000960B2C /* DropupMenu.m */; };
 		95EE464B1C56529A00960B2C /* GenderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EE464A1C56529A00960B2C /* GenderController.m */; };
 		95EF276D1C49D15A004654C6 /* RootTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EF276C1C49D15A004654C6 /* RootTabBarController.m */; };
-		95EF27731C49D2F9004654C6 /* RecommendController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EF27721C49D2F9004654C6 /* RecommendController.m */; };
-		95EF27761C49D363004654C6 /* CityHunterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EF27751C49D363004654C6 /* CityHunterController.m */; };
 		95EF27791C49D38C004654C6 /* FriendController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EF27781C49D38C004654C6 /* FriendController.m */; };
 		95EF27821C49DDCF004654C6 /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 95EF27811C49DDCF004654C6 /* user.png */; };
 		95EF27841C49DE9F004654C6 /* user1.png in Resources */ = {isa = PBXBuildFile; fileRef = 95EF27831C49DE9F004654C6 /* user1.png */; };
@@ -719,10 +717,6 @@
 		95EE464A1C56529A00960B2C /* GenderController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenderController.m; sourceTree = "<group>"; };
 		95EF276B1C49D15A004654C6 /* RootTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootTabBarController.h; sourceTree = "<group>"; };
 		95EF276C1C49D15A004654C6 /* RootTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootTabBarController.m; sourceTree = "<group>"; };
-		95EF27711C49D2F9004654C6 /* RecommendController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendController.h; sourceTree = "<group>"; };
-		95EF27721C49D2F9004654C6 /* RecommendController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendController.m; sourceTree = "<group>"; };
-		95EF27741C49D363004654C6 /* CityHunterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityHunterController.h; sourceTree = "<group>"; };
-		95EF27751C49D363004654C6 /* CityHunterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityHunterController.m; sourceTree = "<group>"; };
 		95EF27771C49D38C004654C6 /* FriendController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendController.h; sourceTree = "<group>"; };
 		95EF27781C49D38C004654C6 /* FriendController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendController.m; sourceTree = "<group>"; };
 		95EF27811C49DDCF004654C6 /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
@@ -1709,10 +1703,6 @@
 			children = (
 				95E76DB51C57C0D400FFBA9E /* New Group */,
 				95F06A901C5724D300AF25CD /* iconfont-xiaoxi.png */,
-				95EF27711C49D2F9004654C6 /* RecommendController.h */,
-				95EF27721C49D2F9004654C6 /* RecommendController.m */,
-				95EF27741C49D363004654C6 /* CityHunterController.h */,
-				95EF27751C49D363004654C6 /* CityHunterController.m */,
 				95F06A891C5721D600AF25CD /* FriendsListController.h */,
 				95F06A8A1C5721D600AF25CD /* FriendsListController.m */,
 				95EF27771C49D38C004654C6 /* FriendController.h */,
@@ -2187,7 +2177,6 @@
 			files = (
 				95A169081C51103500088DE8 /* LoginViewController.m in Sources */,
 				95A169071C51012700088DE8 /* SHValidationResult.m in Sources */,
-				95EF27731C49D2F9004654C6 /* RecommendController.m in Sources */,
 				95E76F5A1C57C34000FFBA9E /* UIView+SDExtension.m in Sources */,
 				95E76F531C57C34000FFBA9E /* OpenURLOnlineNavigationViewController.m in Sources */,
 				95E76F1F1C57C34000FFBA9E /* OverlayViewController.m in Sources */,
@@ -2327,8 +2316,11 @@
 				95E76FCE1C57CC7400FFBA9E /* searchPTableViewCell.m in Sources */,
 				95E76F6D1C57C34000FFBA9E /* WeatherViewController.m in Sources */,
 				95AA92531C53781400A77297 /* headPhotoController.m in Sources */,
+<<<<<<< HEAD
 				95EF27761C49D363004654C6 /* CityHunterController.m in Sources */,
 				C276D5A61C5869D7008DD052 /* CALayer+YYWebImage.m in Sources */,
+=======
+>>>>>>> 514ee306dfb739d18b3f633dcd609639df7e5874
 				95EF28161C4A7620004654C6 /* PhoneViewController.m in Sources */,
 				95A169041C51012700088DE8 /* SHAutocorrectSuggestionView.m in Sources */,
 				95E76DE11C57C17300FFBA9E /* NearbyTableViewController.m in Sources */,

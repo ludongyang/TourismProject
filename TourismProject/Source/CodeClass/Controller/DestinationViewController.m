@@ -1,0 +1,254 @@
+//
+//  DestinationViewController.m
+//  TourismApp
+//
+//  Created by ShenDeju on 16/1/20.
+//  Copyright © 2016年 王欣. All rights reserved.
+//
+
+#import "DestinationViewController.h"
+
+@interface DestinationViewController () <UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UITableViewDataSource,UITableViewDelegate,CitySearchViewDelegate,UISearchBarDelegate>
+@property(strong,nonatomic) UICollectionView *collectionView;
+
+@property(strong,nonatomic) UICollectionViewFlowLayout *flowLayout;
+@property(strong,nonatomic) SDCycleScrollView *sdScrollView;
+@property(strong,nonatomic) NSMutableArray *bannersArr;
+@property(strong,nonatomic) NSMutableArray *elementsArr;
+@property(strong,nonatomic) NSMutableArray *sectionArr;
+@property(strong,nonatomic) NSMutableDictionary *dataDict;
+
+@property(assign,nonatomic) NSInteger index;
+
+@property(strong,nonatomic) NSArray *dataSource;
+@property(strong,nonatomic) UISearchBar *searchBar;
+@property(strong,nonatomic) NSMutableArray *searchResult;
+
+@property(strong,nonatomic) NSMutableArray *searchDomain;
+@property(strong,nonatomic) NSMutableArray *searchOversea;
+
+
+
+@end
+
+static NSString *const cellReuseID = @"collectionViewCellReuseIdentifier";
+static NSString *const headerReuseID = @"headerReuseIdentifier";
+static NSString *const headerReuseID2 = @"headerReuseIdentifier2";
+static NSString *const destinationReuseID = @"destinationCollectionReuseIdentifier";
+static NSString *const tableViewCellID = @"tableViewCellIdentifier";
+
+@implementation DestinationViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.dataDict = [NSMutableDictionary new];
+    self.bannersArr = [NSMutableArray array];
+    self.elementsArr = [NSMutableArray array];
+    self.sectionArr = [NSMutableArray array];
+    [self getAllData];
+    
+    self.navigationController.navigationBar.backgroundColor = [UIColor cyanColor];
+    self.flowLayout = [[UICollectionViewFlowLayout alloc] init];
+    self.flowLayout.itemSize = CGSizeMake((kWidth -30)/2, (kWidth-30)/2);
+    self.flowLayout.minimumLineSpacing = 10;
+    self.flowLayout.minimumInteritemSpacing = 10;
+    self.flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
+    self.flowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
+    
+    self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, kWidth, kHeight) collectionViewLayout:self.flowLayout];
+    self.collectionView.backgroundColor = [UIColor whiteColor];
+    self.collectionView.delegate = self;
+    self.collectionView.dataSource = self;
+    self.collectionView.bounces = NO;
+    self.collectionView.showsVerticalScrollIndicator = NO;
+    self.collectionView.showsHorizontalScrollIndicator =  NO;
+    [self.collectionView registerClass:[DestinatioinCollectionViewCell class] forCellWithReuseIdentifier:destinationReuseID];
+    
+   self.sdScrollView = [[SDCycleScrollView alloc] initWithFrame:CGRectMake(0, 0, kWidth, 170)];
+    
+    [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerReuseID];
+    [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerReuseID2];
+    [self.view addSubview:self.collectionView];
+    
+    [self drawNavigationView];
+}
+
+-(void) drawNavigationView
+{
+    self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(10,0, kWidth-80, 44)];
+    self.searchBar.delegate = self;
+    self.searchBar.placeholder= @"搜索";
+    [_searchBar setBackgroundColor:[UIColor clearColor]];
+    _searchBar.autocorrectionType = UITextAutocorrectionTypeNo;
+    _searchBar.autocapitalizationType = UITextAutocapitalizationTypeNone;
+    [[[_searchBar.subviews objectAtIndex:0].subviews objectAtIndex:0] removeFromSuperview];
+    [self.navigationController.navigationBar addSubview:self.searchBar];
+    [self.navigationController.navigationBar setBackgroundColor:[UIColor cyanColor]];
+    
+     self.nearbyButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    self.nearbyButton.frame = CGRectMake(kWidth-60, 0, 50, 40);
+    [self.nearbyButton setTitle:@"附近" forState:UIControlStateNormal];
+    [self.nearbyButton addTarget:self action:@selector(nearbyAction:) forControlEvents:UIControlEventTouchUpInside];
+    [self.navigationController.navigationBar addSubview:self.nearbyButton];
+    
+    _searchResult = [NSMutableArray array];
+}
+-(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+    NSLog(@"22");
+}
+ 
+-(void)changeAction:(UIButton*)sender{
+    NSLog(@"221");
+}
+-(void) nearbyAction:(UIButton*) sender
+{
+}
+
+-(void) getAllData
+{
+    [[getDestinationTools shareGetDestinationTools] getBannerData:^(NSMutableArray *dataArray, BOOL success) {
+        if (success == YES) {
+            self.bannersArr = dataArray;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.collectionView reloadData];
+            });
+        }
+    }];
+    
+[[getDestinationTools shareGetDestinationTools] getSectionData:^(NSMutableDictionary *dataDict, BOOL success) {
+    for (NSDictionary * dic in dataDict[@"elements"]) {
+        ElementModel * model = [ElementModel initWithDictionary:dic];
+        [self.elementsArr addObject:model];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.collectionView reloadData];
+        });
+    }
+ }];
+
+
+}
+//        [self.dataDict setValue:self.bannersArr forKey:@"banners"];
+//        [self.dataDict setValue:self.elementsArr forKey:@"elements"];
+
+
+
+-(NSInteger) numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return  self.elementsArr.count;
+}
+
+-(NSInteger) collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+       ElementModel *mode = self.elementsArr[section];
+    NSArray *dataArr = mode.data;
+    return dataArr.count;
+}
+
+-(UICollectionReusableView *) collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+        ElementModel *model = self.elementsArr[indexPath.section];
+        self.index = indexPath.section;
+    
+        UICollectionReusableView *header1 = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerReuseID forIndexPath:indexPath];
+        if (indexPath.section == 0) {
+            UICollectionReusableView *header = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerReuseID2 forIndexPath:indexPath];
+            NSMutableArray *dataAr = [NSMutableArray array];
+            for (scorllDataModel *mode in self.bannersArr) {
+                NSString *imgUR = mode.image_url;
+                [dataAr addObject:imgUR];
+            }
+            self.sdScrollView.imageURLStringsGroup = dataAr;
+            
+            DestinationSectionHeader *destihead = [[DestinationSectionHeader alloc] initWithFrame:CGRectMake(0, 170, kWidth, 30)];
+            destihead.allButton.hidden = YES;
+            destihead.destinationLabel.text = model.title;
+            
+            [header addSubview:self.sdScrollView];
+            [header addSubview:destihead];
+            return header;
+        }else{
+            
+            DestinationSectionHeader *destihead = [[DestinationSectionHeader alloc] initWithFrame:CGRectMake(0, 0, kWidth, 30)];
+            if (model.more == 0) {
+                [destihead.allButton removeFromSuperview];
+            }else{
+                destihead.allButton.tag = 1111+indexPath.section;
+                [destihead.allButton addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
+            }
+            NSArray * arr = header1.subviews;
+            for (UIView * view in arr) {
+                [view removeFromSuperview];
+            }
+            destihead.destinationLabel.text = model.title;
+            [header1 addSubview:destihead];
+            
+            return header1;
+        }
+    return nil;
+}
+
+-(void) buttonAction:(UIButton*) sender
+{
+    ElementModel *model = self.elementsArr[sender.tag-1111];
+    UICollectionViewFlowLayout *flowlayout = [UICollectionViewFlowLayout new];
+    MoreCityCollectionViewController *moreVC = [[MoreCityCollectionViewController alloc] initWithCollectionViewLayout:flowlayout];
+    
+        moreVC.urlIndex = model.index;
+        moreVC.countryStr = model.title;
+        NSLog(@"++++%ld %@",model.index,model.title);
+   
+    [self.navigationController pushViewController:moreVC animated:YES];
+}
+
+-(UICollectionViewCell *) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+        DestinatioinCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:destinationReuseID forIndexPath:indexPath];
+    ElementModel *model = self.elementsArr[indexPath.section];
+    NSArray *dataArr = model.data;
+    DestinationCityModel *cityModel = [DestinationCityModel initWithDictionary:dataArr[indexPath.row]];
+    [cell.imgView sd_setImageWithURL:[NSURL URLWithString:cityModel.cover]];
+    cell.titleLabel.text = cityModel.name;
+     return cell;
+
+}
+-(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
+{
+    if (section == 0) {
+        return CGSizeMake(kWidth, 200);
+    }
+    return CGSizeMake(kWidth, 30);
+}
+-(CGSize) collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return CGSizeMake((kWidth-30)/2, (kWidth-30)/2);
+}
+
+
+
+#pragma mark----UISearchBarDelegate----------
+-(BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar
+{
+    [self.searchBar resignFirstResponder];
+    UICollectionViewFlowLayout *flayout = [[UICollectionViewFlowLayout alloc] init];
+    SearchCollectionViewController *searchVC = [[SearchCollectionViewController alloc] initWithCollectionViewLayout:flayout];
+    UINavigationController * nav= [[UINavigationController alloc]initWithRootViewController:searchVC];
+    [self presentViewController:nav animated:YES completion:nil];
+    return YES;
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+@end

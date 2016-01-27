@@ -195,9 +195,10 @@ static NSString *const tableViewCellID = @"tableViewCellIdentifier";
     
         moreVC.urlIndex = model.index;
         moreVC.countryStr = model.title;
-        NSLog(@"++++%ld %@",model.index,model.title);
+    UINavigationController *moreNC = [[UINavigationController alloc] initWithRootViewController:moreVC];
+    moreNC.modalTransitionStyle = UIModalTransitionStylePartialCurl;
    
-    [self.navigationController pushViewController:moreVC animated:YES];
+    [self presentViewController:moreNC animated:YES completion:nil];
 }
 
 -(UICollectionViewCell *) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath

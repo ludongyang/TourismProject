@@ -18,6 +18,10 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(backAction)];
+    
+    
         self.navigationItem.title = self.countryStr;
     NSString *str = [NSString stringWithFormat:@"http://api.breadtrip.com/destination/index_places/%ld/",self.urlIndex];
     self.dataArray = [NSMutableArray array];
@@ -38,6 +42,11 @@ static NSString * const reuseIdentifier = @"Cell";
     self.collectionView.bounces = NO;
     [self.collectionView registerClass:[DestinatioinCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
+}
+
+-(void) backAction
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -15,5 +15,6 @@
 #import <AVOSCloud/AVOSCloud.h>
 #import <LeanCloudSocial/AVOSCloudSNS.h>
 #import <LeanCloudSocial/AVUser+SNS.h>
+#import "UIViewController+MJPopupViewController.h"
 const static NSString *APIKey = @"abb02896facccc58a0cf9aea2932903a";
 #endif

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9572F90A1C58FAC2008D1EDE /* fs_main_login_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 9572F9081C58FAC2008D1EDE /* fs_main_login_normal.png */; };
+		9572F90B1C58FAC2008D1EDE /* fs_main_login_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 9572F9091C58FAC2008D1EDE /* fs_main_login_selected.png */; };
+		9583D3391C58AE4200CE5B19 /* MJPopupBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9583D3361C58AE4200CE5B19 /* MJPopupBackgroundView.m */; };
+		9583D33A1C58AE4200CE5B19 /* UIViewController+MJPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9583D3381C58AE4200CE5B19 /* UIViewController+MJPopupViewController.m */; };
+		9583D33E1C58BDD500CE5B19 /* 1234.png in Resources */ = {isa = PBXBuildFile; fileRef = 9583D33D1C58BDD500CE5B19 /* 1234.png */; };
+		9583D3411C58C92E00CE5B19 /* DateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9583D3401C58C92E00CE5B19 /* DateViewController.m */; };
 		95A169031C51012700088DE8 /* NSString+LevenshteinDistance.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A168FA1C51012700088DE8 /* NSString+LevenshteinDistance.m */; };
 		95A169041C51012700088DE8 /* SHAutocorrectSuggestionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A168FC1C51012700088DE8 /* SHAutocorrectSuggestionView.m */; };
 		95A169051C51012700088DE8 /* SHEmailValidationTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A168FE1C51012700088DE8 /* SHEmailValidationTextField.m */; };
@@ -328,6 +334,15 @@
 /* Begin PBXFileReference section */
 		2C367D2A5AD749BFFCA49409 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		53D9849EA7772EFE7C030D7E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		9572F9081C58FAC2008D1EDE /* fs_main_login_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fs_main_login_normal.png; sourceTree = "<group>"; };
+		9572F9091C58FAC2008D1EDE /* fs_main_login_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fs_main_login_selected.png; sourceTree = "<group>"; };
+		9583D3351C58AE4200CE5B19 /* MJPopupBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPopupBackgroundView.h; sourceTree = "<group>"; };
+		9583D3361C58AE4200CE5B19 /* MJPopupBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPopupBackgroundView.m; sourceTree = "<group>"; };
+		9583D3371C58AE4200CE5B19 /* UIViewController+MJPopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MJPopupViewController.h"; sourceTree = "<group>"; };
+		9583D3381C58AE4200CE5B19 /* UIViewController+MJPopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MJPopupViewController.m"; sourceTree = "<group>"; };
+		9583D33D1C58BDD500CE5B19 /* 1234.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1234.png; sourceTree = "<group>"; };
+		9583D33F1C58C92E00CE5B19 /* DateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateViewController.h; sourceTree = "<group>"; };
+		9583D3401C58C92E00CE5B19 /* DateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateViewController.m; sourceTree = "<group>"; };
 		95A168F91C51012700088DE8 /* NSString+LevenshteinDistance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+LevenshteinDistance.h"; sourceTree = "<group>"; };
 		95A168FA1C51012700088DE8 /* NSString+LevenshteinDistance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+LevenshteinDistance.m"; sourceTree = "<group>"; };
 		95A168FB1C51012700088DE8 /* SHAutocorrectSuggestionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHAutocorrectSuggestionView.h; sourceTree = "<group>"; };
@@ -934,6 +949,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9583D3341C58AE4200CE5B19 /* PopupVIew */ = {
+			isa = PBXGroup;
+			children = (
+				9583D3351C58AE4200CE5B19 /* MJPopupBackgroundView.h */,
+				9583D3361C58AE4200CE5B19 /* MJPopupBackgroundView.m */,
+				9583D3371C58AE4200CE5B19 /* UIViewController+MJPopupViewController.h */,
+				9583D3381C58AE4200CE5B19 /* UIViewController+MJPopupViewController.m */,
+			);
+			path = PopupVIew;
+			sourceTree = "<group>";
+		};
 		95A168F81C51012700088DE8 /* mailValidator */ = {
 			isa = PBXGroup;
 			children = (
@@ -954,6 +980,8 @@
 		95E76DB51C57C0D400FFBA9E /* New Group */ = {
 			isa = PBXGroup;
 			children = (
+				9572F9081C58FAC2008D1EDE /* fs_main_login_normal.png */,
+				9572F9091C58FAC2008D1EDE /* fs_main_login_selected.png */,
 				95E76DB61C57C17300FFBA9E /* RecommendCollectionViewCell.h */,
 				95E76DB71C57C17300FFBA9E /* RecommendCollectionViewCell.m */,
 				95E76DB81C57C17300FFBA9E /* RecommendCollectionViewCell.xib */,
@@ -1711,6 +1739,8 @@
 				95F06A9F1C578DB600AF25CD /* userNameController.xib */,
 				95EE46491C56529A00960B2C /* GenderController.h */,
 				95EE464A1C56529A00960B2C /* GenderController.m */,
+				9583D33F1C58C92E00CE5B19 /* DateViewController.h */,
+				9583D3401C58C92E00CE5B19 /* DateViewController.m */,
 				95AA92511C53781400A77297 /* headPhotoController.h */,
 				95AA92521C53781400A77297 /* headPhotoController.m */,
 				95F252631C4E8E0B00C45CBD /* SetupTableViewController.h */,
@@ -1720,6 +1750,7 @@
 				95EF27951C49EFE2004654C6 /* LoginViewController.xib */,
 				95F06A981C57524F00AF25CD /* regetController.h */,
 				95F06A991C57524F00AF25CD /* regetController.m */,
+				9583D33D1C58BDD500CE5B19 /* 1234.png */,
 				95F06A9A1C57524F00AF25CD /* regetController.xib */,
 				95D1FEEF1C4D28AF004F3A8F /* registerViewController.h */,
 				95D1FEF01C4D28AF004F3A8F /* registerViewController.m */,
@@ -1864,6 +1895,7 @@
 		95EFB8891C492946006CFC9D /* TheThird */ = {
 			isa = PBXGroup;
 			children = (
+				9583D3341C58AE4200CE5B19 /* PopupVIew */,
 				C276D5B31C5874C1008DD052 /* YYWebImage */,
 				95E76E091C57C34000FFBA9E /* FDSlideBar */,
 				95E76E0E1C57C34000FFBA9E /* MapControllers */,
@@ -2064,6 +2096,7 @@
 				95EF27FA1C4A3FAD004654C6 /* ios-social-sdk-login-quick.html in Resources */,
 				95EF27FC1C4A3FAD004654C6 /* ios-social-sdk-share-detail.html in Resources */,
 				95EF27841C49DE9F004654C6 /* user1.png in Resources */,
+				9583D33E1C58BDD500CE5B19 /* 1234.png in Resources */,
 				95F06A8F1C57249500AF25CD /* friend.png in Resources */,
 				95EF27FF1C4A3FAD004654C6 /* markdown.css in Resources */,
 				95EF27AA1C4A2C9D004654C6 /* iconfont-xinlang.png in Resources */,
@@ -2083,6 +2116,7 @@
 				95EF27FD1C4A3FAD004654C6 /* ios-social-sdk-share-quick.html in Resources */,
 				95EF27E31C4A3FAD004654C6 /* UMSocialLocalizable.strings in Resources */,
 				95EF278C1C49E111004654C6 /* iconfont-users.png in Resources */,
+				9572F90A1C58FAC2008D1EDE /* fs_main_login_normal.png in Resources */,
 				95F06AA61C57AC7300AF25CD /* ChangePasswordController.xib in Resources */,
 				95E76FCF1C57CC7400FFBA9E /* searchPTableViewCell.xib in Resources */,
 				95EF27E91C4A3FAD004654C6 /* UMShareEditViewControlleriPad.xib in Resources */,
@@ -2101,6 +2135,7 @@
 				95EFB86D1C4928B6006CFC9D /* Main.storyboard in Resources */,
 				95E76FD31C57CC7400FFBA9E /* searchUTableViewCell.xib in Resources */,
 				95EF27A81C4A2C46004654C6 /* iconfont-qq.png in Resources */,
+				9572F90B1C58FAC2008D1EDE /* fs_main_login_selected.png in Resources */,
 				95EF27F11C4A3FAD004654C6 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				95E76F4D1C57C34000FFBA9E /* MJRefresh.bundle in Resources */,
 				95D1FEF81C4D2A65004F3A8F /* phonerRegisterController.xib in Resources */,
@@ -2217,6 +2252,7 @@
 				C276D5E41C5874C1008DD052 /* UIImage+YYWebImage.m in Sources */,
 				95E76F7F1C57C34000FFBA9E /* TransitDetailViewController.m in Sources */,
 				95E76F7A1C57C34000FFBA9E /* StepDetailViewController.m in Sources */,
+				9583D33A1C58AE4200CE5B19 /* UIViewController+MJPopupViewController.m in Sources */,
 				95EE464B1C56529A00960B2C /* GenderController.m in Sources */,
 				95E76F191C57C34000FFBA9E /* CustomUserLocationViewController.m in Sources */,
 				95EF9A271C5711CA006DEBCD /* UIImage+WebP.m in Sources */,
@@ -2358,6 +2394,7 @@
 				95E76F661C57C34000FFBA9E /* NearbyVewController.m in Sources */,
 				95EF9A1C1C5711CA006DEBCD /* NSData+ImageContentType.m in Sources */,
 				95E76FDC1C57CCC400FFBA9E /* getDestinationTools.m in Sources */,
+				9583D3391C58AE4200CE5B19 /* MJPopupBackgroundView.m in Sources */,
 				95E76F781C57C34000FFBA9E /* RouteDetailViewController.m in Sources */,
 				95EFB8641C4928B6006CFC9D /* main.m in Sources */,
 				95E76FD21C57CC7400FFBA9E /* searchUTableViewCell.m in Sources */,
@@ -2388,6 +2425,7 @@
 				95E76F1D1C57C34000FFBA9E /* HeatMapTileOverlayViewController.m in Sources */,
 				95A169051C51012700088DE8 /* SHEmailValidationTextField.m in Sources */,
 				95E76F581C57C34000FFBA9E /* SDCollectionViewCell.m in Sources */,
+				9583D3411C58C92E00CE5B19 /* DateViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

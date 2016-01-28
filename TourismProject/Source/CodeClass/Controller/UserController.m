@@ -32,7 +32,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self p_setupView];
     
 }
 
@@ -40,6 +39,7 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     
+     [self p_setupView];
     AVUser * curUser = [AVUser currentUser];
     
     if (curUser !=  nil){
@@ -99,7 +99,6 @@
     self.headPhotoImgview = [[UIImageView alloc] init];
     self.headPhotoImgview.frame = CGRectMake(0, 0, 100,100);
     self.headPhotoImgview.center = self.backgroundView.center;
-    self.headPhotoImgview.backgroundColor = [UIColor greenColor];
     self.headPhotoImgview.layer.masksToBounds = YES;
     self.headPhotoImgview.layer.cornerRadius = 50;
     self.headPhotoImgview.userInteractionEnabled = YES;
@@ -188,6 +187,8 @@
 
 -(void)viewDidAppear:(BOOL)animated
 {
+   
+
     __block NSUInteger index = [[[NSUserDefaults standardUserDefaults] valueForKey:@"selectedIndex"] integerValue];
     
     AVUser * curUser = [AVUser currentUser];

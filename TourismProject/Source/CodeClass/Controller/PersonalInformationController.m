@@ -11,11 +11,18 @@
 #import "infoTwoCell.h"
 #import "headPhotoController.h"
 #import "userNameController.h"
-@interface PersonalInformationController ()
+#import "DateViewController.h"
+
+@interface PersonalInformationController ()<genderDelegate,DateDelegate>
 @property (nonatomic,strong)NSMutableArray * headArray;
 @property (nonatomic,strong)NSMutableArray * nameArray;
 @property (nonatomic,strong)NSMutableArray * numberArray;
 @property (nonatomic,strong)NSMutableArray * infoArray;
+
+@property (nonatomic, retain) NSIndexPath *selectedIndexPath;
+@property (nonatomic,strong)GenderController * gVC;
+@property (nonatomic,strong)DateViewController * dataVC;
+
 @end
 
 @implementation PersonalInformationController
@@ -24,7 +31,7 @@
     [super viewDidLoad];
     self.navigationItem.title = @"个人信息";
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"iconfont-fanhui-2"] style:(UIBarButtonItemStylePlain) target:self action:@selector(returnAction:)];
-  
+    
     self.infoArray = @[@"手机号码",@"电子邮箱"].mutableCopy;
     self.nameArray = @[@"用户名"].mutableCopy;
     self.numberArray = @[@"地区",@"性别",@"生日",@"个性签名"].mutableCopy;
@@ -32,6 +39,9 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"infoTwoCell" bundle:nil] forCellReuseIdentifier:@"cell2"];
     
 }
+
+
+
 - (void)returnAction:(UIBarButtonItem *)sender{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -73,7 +83,7 @@
                 [cell.headImg sd_setImageWithURL:[NSURL URLWithString:imageFile.url]];
             }
         }];
-
+        
         return cell;
         
     }else if (indexPath.section ==1){
@@ -88,10 +98,25 @@
     }else if(indexPath.section == 2){
         infoTwoCell * cell = [tableView dequeueReusableCellWithIdentifier:@"cell2" forIndexPath:indexPath];
         cell.nameLabel.text = self.numberArray[indexPath.row];
+        if (indexPath.row == 1) {
+            
+            
+            [GenderController share].ps = ^(NSString * string){
+                
+                cell.setLabel.text = string;
+                
+            };
+            
+            
+        }
+        
+        
+        
         return cell;
     }
     return nil;
 }
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 0) {
@@ -124,37 +149,60 @@
     }else if (indexPath.section == 2){
         if (indexPath.row == 0) {
             
-            
-            
-            
-            
+        
         }else if(indexPath.row == 1) {
-//            性别
-           
-            
+            //            性别
+            self.gVC = [[GenderController alloc] init];
+            self.gVC.delegate = self;
+            //
+          
+            [self presentPopupViewController:self.gVC animationType:(MJPopupViewAnimationSlideBottomTop)];
         }else if (indexPath.row == 2){
             
-            UIDatePicker * datapicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, 0, 300, 300)];
-            datapicker.datePickerMode = UIDatePickerModeDate;
             
-            datapicker.center = self.tableView.center;
-            [self.tableView addSubview:datapicker];
-            
-                  
-            
+            self.dataVC = [[DateViewController alloc] init];
+            self.dataVC.delegate = self;
+            [self presentPopupViewController:self.dataVC animationType:(MJPopupViewAnimationSlideBottomTop)];
+
         }else {
             
         }
-        
-        
-        
     }
     
+}
+-(void)selectGender:(BOOL)gender
+{
+    NSLog(@"===%d",gender);
     
+    infoTwoCell  * cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:2]];
+    cell.setLabel.text = gender == 1 ?@"男":@"女";
+    [ [AVUser currentUser] setObject:cell.setLabel.text forKey:@"gender"];
+    [self dismissPopupViewControllerWithanimationType:MJPopupViewAnimationFade];
+}
+//日期代理方法
+-(void)selectDate:(NSDate *)adate
+{
     
+//    NSLog(@"%@",adate);
+    infoTwoCell * cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:2]];
+    NSString * string = [NSString stringWithFormat:@"%@",adate];
+  string =  [string substringToIndex:9];
+    
+    cell.setLabel.text = string;
+    NSLog(@"%@",cell.setLabel.text);
+    [self dismissPopupViewControllerWithanimationType:MJPopupViewAnimationFade];
     
     
 }
+
+
+
+
+
+
+
+
+
 /*
  // Override to support conditional editing of the table view.
  - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

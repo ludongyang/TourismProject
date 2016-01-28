@@ -121,7 +121,7 @@
     AFURLSessionManager * manager = [[AFURLSessionManager alloc]initWithSessionConfiguration:configuration];
     NSURL * url = [NSURL URLWithString:[NSString stringWithFormat:@"http://api.breadtrip.com/place/pois/nearby/?category=%@&start=0&count=20&latitude=%lf&longitude=%lf",category,location.coordinate.latitude,location.coordinate.longitude]];
     NSURLRequest * request = [NSURLRequest requestWithURL:url];
-
+    NSLog(@"%@",url);
     NSURLSessionDataTask * dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
         if (error) {
             NSLog(@"数据解析错误Error:%@",error);

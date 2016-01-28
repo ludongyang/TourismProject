@@ -48,7 +48,7 @@
 @property (strong, nonatomic) NSString *recommended_reason;
 @property (strong, nonatomic) NSString *country;
 @property (strong, nonatomic) NSString *address;
-@property (strong, nonatomic) NSString *location;
+@property (strong, nonatomic) NSDictionary *location;
 @property (strong, nonatomic) NSString *visited_count;
 @property (strong, nonatomic) NSString *url;
 @property (strong, nonatomic) NSString *wish_to_go_count;

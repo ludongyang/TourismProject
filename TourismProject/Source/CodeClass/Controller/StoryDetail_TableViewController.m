@@ -83,7 +83,7 @@ static NSString * const reuseStoryDetailIdentifier = @"reuseStoryDetailIdentifie
     
     if (!isnan(scale)) {
         
-        return (kWidth-kGap)*scale+rect.size.height;
+        return (kWidth-kGap)/scale+rect.size.height;
         
     }
     return rect.size.height+30;

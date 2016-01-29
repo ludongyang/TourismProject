@@ -7,9 +7,8 @@
 //
 
 #import "NearbyMainViewController.h"
-
-
 #import "NearbyTableViewController.h"
+
 @interface NearbyMainViewController ()
 @property(nonatomic,strong)NSMutableArray * titleArray;
 @property(nonatomic,strong)NSMutableArray * controllerClasses;

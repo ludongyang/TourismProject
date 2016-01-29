@@ -64,6 +64,9 @@
 #import "scorllDataModel.h"
 #import "DestinationCityModel.h"
 #import "getDestinationTools.h"
+#import "DestinationDetailViewController.h"
+#import "ExpandHeader.h"
+
 #import "ElementModel.h"
 #import "MoreCityCollectionViewController.h"
 #import "getMoreCityTools.h"
@@ -71,6 +74,7 @@
 #import "SearchDataTools.h"
 #import "SearchCollectionViewController.h"
 #import "SearchResultTableViewController.h"
+#import "LabelCollectionViewCell.h"
 #import "searchPTableViewCell.h"
 #import "searchTTableViewCell.h"
 #import "searchUTableViewCell.h"

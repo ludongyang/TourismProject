@@ -11,6 +11,8 @@
 		9572F90B1C58FAC2008D1EDE /* fs_main_login_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 9572F9091C58FAC2008D1EDE /* fs_main_login_selected.png */; };
 		9572F9A41C5B0D5B008D1EDE /* PlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9572F9A31C5B0D5B008D1EDE /* PlaceholderTextView.m */; };
 		9572F9D61C5B4974008D1EDE /* SignatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9572F9D51C5B4974008D1EDE /* SignatureViewController.m */; };
+		9572F9DC1C5B5AA2008D1EDE /* OpenAMapURLRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9572F9D91C5B5AA2008D1EDE /* OpenAMapURLRequestViewController.m */; };
+		9572F9DD1C5B5AA2008D1EDE /* OpenURLOnlineNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9572F9DB1C5B5AA2008D1EDE /* OpenURLOnlineNavigationViewController.m */; };
 		9583D3391C58AE4200CE5B19 /* MJPopupBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9583D3361C58AE4200CE5B19 /* MJPopupBackgroundView.m */; };
 		9583D33A1C58AE4200CE5B19 /* UIViewController+MJPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9583D3381C58AE4200CE5B19 /* UIViewController+MJPopupViewController.m */; };
 		9583D33E1C58BDD500CE5B19 /* 1234.png in Resources */ = {isa = PBXBuildFile; fileRef = 9583D33D1C58BDD500CE5B19 /* 1234.png */; };
@@ -127,8 +129,6 @@
 		95E76F4F1C57C34000FFBA9E /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E76E981C57C34000FFBA9E /* UIScrollView+MJExtension.m */; };
 		95E76F501C57C34000FFBA9E /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E76E9A1C57C34000FFBA9E /* UIScrollView+MJRefresh.m */; };
 		95E76F511C57C34000FFBA9E /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E76E9C1C57C34000FFBA9E /* UIView+MJExtension.m */; };
-		95E76F521C57C34000FFBA9E /* OpenAMapURLRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E76EA01C57C34000FFBA9E /* OpenAMapURLRequestViewController.m */; };
-		95E76F531C57C34000FFBA9E /* OpenURLOnlineNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E76EA21C57C34000FFBA9E /* OpenURLOnlineNavigationViewController.m */; };
 		95E76F541C57C34000FFBA9E /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E76EA61C57C34000FFBA9E /* TAAbstractDotView.m */; };
 		95E76F551C57C34000FFBA9E /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E76EA81C57C34000FFBA9E /* TAAnimatedDotView.m */; };
 		95E76F561C57C34000FFBA9E /* TADotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E76EAA1C57C34000FFBA9E /* TADotView.m */; };
@@ -136,44 +136,6 @@
 		95E76F581C57C34000FFBA9E /* SDCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E76EAE1C57C34000FFBA9E /* SDCollectionViewCell.m */; };
 		95E76F591C57C34000FFBA9E /* SDCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E76EB01C57C34000FFBA9E /* SDCycleScrollView.m */; };
 		95E76F5A1C57C34000FFBA9E /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E76EB21C57C34000FFBA9E /* UIView+SDExtension.m */; };
-		95E76F5B1C57C34000FFBA9E /* BusLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E76EB61C57C34000FFBA9E /* BusLineViewController.m */; };
-		95E76F5C1C57C34000FFBA9E /* BusStopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E76EB81C57C34000FFBA9E /* BusStopViewController.m */; };
-		95E76F5D1C57C34000FFBA9E /* CloudPOIAroundSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E76EBA1C57C34000FFBA9E /* CloudPOIAroundSearchViewController.m */; };
-		95E76F5E1C57C34000FFBA9E /* CloudPOIIDSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E76EBC1C57C34000FFBA9E /* CloudPOIIDSearchViewController.m */; };
-		95E76F5F1C57C34000FFBA9E /* CloudPOILocalSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E76EBE1C57C34000FFBA9E /* CloudPOILocalSearchViewController.m */; };
-		95E76F601C57C34000FFBA9E /* CloudPOIPolygonSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E76EC01C57C34000FFBA9E /* CloudPOIPolygonSearchViewController.m */; };
-		95E76F611C57C34000FFBA9E /* DistrictViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E76EC21C57C34000FFBA9E /* DistrictViewController.m */; };
-		95E76F621C57C34000FFBA9E /* GeoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E76EC41C57C34000FFBA9E /* GeoViewController.m */; };
-		95E76F631C57C34000FFBA9E /* InvertGeoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E76EC61C57C34000FFBA9E /* InvertGeoViewController.m */; };
-		95E76F641C57C34000FFBA9E /* LocationShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E76EC81C57C34000FFBA9E /* LocationShareViewController.m */; };
-		95E76F651C57C34000FFBA9E /* NaviShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E76ECA1C57C34000FFBA9E /* NaviShareViewController.m */; };
-		95E76F661C57C34000FFBA9E /* NearbyVewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E76ECC1C57C34000FFBA9E /* NearbyVewController.m */; };
-		95E76F671C57C34000FFBA9E /* POIShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E76ECE1C57C34000FFBA9E /* POIShareViewController.m */; };
-		95E76F681C57C34000FFBA9E /* PoiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E76ED01C57C34000FFBA9E /* PoiViewController.m */; };
-		95E76F691C57C34000FFBA9E /* RoutePlanningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E76ED21C57C34000FFBA9E /* RoutePlanningViewController.m */; };
-		95E76F6A1C57C34000FFBA9E /* RouteShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E76ED41C57C34000FFBA9E /* RouteShareViewController.m */; };
-		95E76F6B1C57C34000FFBA9E /* ShareSearchBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E76ED61C57C34000FFBA9E /* ShareSearchBaseViewController.m */; };
-		95E76F6C1C57C34000FFBA9E /* TipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E76ED81C57C34000FFBA9E /* TipViewController.m */; };
-		95E76F6D1C57C34000FFBA9E /* WeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E76EDA1C57C34000FFBA9E /* WeatherViewController.m */; };
-		95E76F6E1C57C34000FFBA9E /* AddressComponentDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E76EDD1C57C34000FFBA9E /* AddressComponentDetailViewController.m */; };
-		95E76F6F1C57C34000FFBA9E /* AMapCloudPOIDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E76EDF1C57C34000FFBA9E /* AMapCloudPOIDetailViewController.m */; };
-		95E76F701C57C34000FFBA9E /* BusLineDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E76EE11C57C34000FFBA9E /* BusLineDetailViewController.m */; };
-		95E76F711C57C34000FFBA9E /* BusStopDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E76EE31C57C34000FFBA9E /* BusStopDetailViewController.m */; };
-		95E76F721C57C34000FFBA9E /* GeoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E76EE51C57C34000FFBA9E /* GeoDetailViewController.m */; };
-		95E76F731C57C34000FFBA9E /* InvertGeoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E76EE71C57C34000FFBA9E /* InvertGeoDetailViewController.m */; };
-		95E76F741C57C34000FFBA9E /* PathDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E76EE91C57C34000FFBA9E /* PathDetailViewController.m */; };
-		95E76F751C57C34000FFBA9E /* PoiDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E76EEB1C57C34000FFBA9E /* PoiDetailViewController.m */; };
-		95E76F761C57C34000FFBA9E /* RoadDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E76EED1C57C34000FFBA9E /* RoadDetailViewController.m */; };
-		95E76F771C57C34000FFBA9E /* RoadInterDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E76EEF1C57C34000FFBA9E /* RoadInterDetailViewController.m */; };
-		95E76F781C57C34000FFBA9E /* RouteDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E76EF11C57C34000FFBA9E /* RouteDetailViewController.m */; };
-		95E76F791C57C34000FFBA9E /* SegmentDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E76EF31C57C34000FFBA9E /* SegmentDetailViewController.m */; };
-		95E76F7A1C57C34000FFBA9E /* StepDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E76EF51C57C34000FFBA9E /* StepDetailViewController.m */; };
-		95E76F7B1C57C34000FFBA9E /* StreetNumberDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E76EF71C57C34000FFBA9E /* StreetNumberDetailViewController.m */; };
-		95E76F7C1C57C34000FFBA9E /* SubPoiDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E76EF91C57C34000FFBA9E /* SubPoiDetailViewController.m */; };
-		95E76F7D1C57C34000FFBA9E /* SubPoiListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E76EFB1C57C34000FFBA9E /* SubPoiListViewController.m */; };
-		95E76F7E1C57C34000FFBA9E /* TipDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E76EFD1C57C34000FFBA9E /* TipDetailViewController.m */; };
-		95E76F7F1C57C34000FFBA9E /* TransitDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E76EFF1C57C34000FFBA9E /* TransitDetailViewController.m */; };
-		95E76F801C57C34000FFBA9E /* WalkingDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E76F011C57C34000FFBA9E /* WalkingDetailViewController.m */; };
 		95E76F811C57C34000FFBA9E /* WMFooldView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E76F051C57C34000FFBA9E /* WMFooldView.m */; };
 		95E76F821C57C34000FFBA9E /* WMMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E76F071C57C34000FFBA9E /* WMMenuItem.m */; };
 		95E76F831C57C34000FFBA9E /* WMMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E76F091C57C34000FFBA9E /* WMMenuView.m */; };
@@ -342,6 +304,10 @@
 		9572F9A31C5B0D5B008D1EDE /* PlaceholderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceholderTextView.m; sourceTree = "<group>"; };
 		9572F9D41C5B4974008D1EDE /* SignatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignatureViewController.h; sourceTree = "<group>"; };
 		9572F9D51C5B4974008D1EDE /* SignatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignatureViewController.m; sourceTree = "<group>"; };
+		9572F9D81C5B5AA2008D1EDE /* OpenAMapURLRequestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenAMapURLRequestViewController.h; sourceTree = "<group>"; };
+		9572F9D91C5B5AA2008D1EDE /* OpenAMapURLRequestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenAMapURLRequestViewController.m; sourceTree = "<group>"; };
+		9572F9DA1C5B5AA2008D1EDE /* OpenURLOnlineNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenURLOnlineNavigationViewController.h; sourceTree = "<group>"; };
+		9572F9DB1C5B5AA2008D1EDE /* OpenURLOnlineNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenURLOnlineNavigationViewController.m; sourceTree = "<group>"; };
 		9583D3351C58AE4200CE5B19 /* MJPopupBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPopupBackgroundView.h; sourceTree = "<group>"; };
 		9583D3361C58AE4200CE5B19 /* MJPopupBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPopupBackgroundView.m; sourceTree = "<group>"; };
 		9583D3371C58AE4200CE5B19 /* UIViewController+MJPopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MJPopupViewController.h"; sourceTree = "<group>"; };
@@ -563,10 +529,6 @@
 		95E76E9A1C57C34000FFBA9E /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		95E76E9B1C57C34000FFBA9E /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
 		95E76E9C1C57C34000FFBA9E /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
-		95E76E9F1C57C34000FFBA9E /* OpenAMapURLRequestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenAMapURLRequestViewController.h; sourceTree = "<group>"; };
-		95E76EA01C57C34000FFBA9E /* OpenAMapURLRequestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenAMapURLRequestViewController.m; sourceTree = "<group>"; };
-		95E76EA11C57C34000FFBA9E /* OpenURLOnlineNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenURLOnlineNavigationViewController.h; sourceTree = "<group>"; };
-		95E76EA21C57C34000FFBA9E /* OpenURLOnlineNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenURLOnlineNavigationViewController.m; sourceTree = "<group>"; };
 		95E76EA51C57C34000FFBA9E /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
 		95E76EA61C57C34000FFBA9E /* TAAbstractDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAbstractDotView.m; sourceTree = "<group>"; };
 		95E76EA71C57C34000FFBA9E /* TAAnimatedDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAnimatedDotView.h; sourceTree = "<group>"; };
@@ -581,82 +543,6 @@
 		95E76EB01C57C34000FFBA9E /* SDCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCycleScrollView.m; sourceTree = "<group>"; };
 		95E76EB11C57C34000FFBA9E /* UIView+SDExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SDExtension.h"; sourceTree = "<group>"; };
 		95E76EB21C57C34000FFBA9E /* UIView+SDExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDExtension.m"; sourceTree = "<group>"; };
-		95E76EB51C57C34000FFBA9E /* BusLineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusLineViewController.h; sourceTree = "<group>"; };
-		95E76EB61C57C34000FFBA9E /* BusLineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusLineViewController.m; sourceTree = "<group>"; };
-		95E76EB71C57C34000FFBA9E /* BusStopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusStopViewController.h; sourceTree = "<group>"; };
-		95E76EB81C57C34000FFBA9E /* BusStopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusStopViewController.m; sourceTree = "<group>"; };
-		95E76EB91C57C34000FFBA9E /* CloudPOIAroundSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CloudPOIAroundSearchViewController.h; sourceTree = "<group>"; };
-		95E76EBA1C57C34000FFBA9E /* CloudPOIAroundSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CloudPOIAroundSearchViewController.m; sourceTree = "<group>"; };
-		95E76EBB1C57C34000FFBA9E /* CloudPOIIDSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CloudPOIIDSearchViewController.h; sourceTree = "<group>"; };
-		95E76EBC1C57C34000FFBA9E /* CloudPOIIDSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CloudPOIIDSearchViewController.m; sourceTree = "<group>"; };
-		95E76EBD1C57C34000FFBA9E /* CloudPOILocalSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CloudPOILocalSearchViewController.h; sourceTree = "<group>"; };
-		95E76EBE1C57C34000FFBA9E /* CloudPOILocalSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CloudPOILocalSearchViewController.m; sourceTree = "<group>"; };
-		95E76EBF1C57C34000FFBA9E /* CloudPOIPolygonSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CloudPOIPolygonSearchViewController.h; sourceTree = "<group>"; };
-		95E76EC01C57C34000FFBA9E /* CloudPOIPolygonSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CloudPOIPolygonSearchViewController.m; sourceTree = "<group>"; };
-		95E76EC11C57C34000FFBA9E /* DistrictViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistrictViewController.h; sourceTree = "<group>"; };
-		95E76EC21C57C34000FFBA9E /* DistrictViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistrictViewController.m; sourceTree = "<group>"; };
-		95E76EC31C57C34000FFBA9E /* GeoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeoViewController.h; sourceTree = "<group>"; };
-		95E76EC41C57C34000FFBA9E /* GeoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeoViewController.m; sourceTree = "<group>"; };
-		95E76EC51C57C34000FFBA9E /* InvertGeoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvertGeoViewController.h; sourceTree = "<group>"; };
-		95E76EC61C57C34000FFBA9E /* InvertGeoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvertGeoViewController.m; sourceTree = "<group>"; };
-		95E76EC71C57C34000FFBA9E /* LocationShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationShareViewController.h; sourceTree = "<group>"; };
-		95E76EC81C57C34000FFBA9E /* LocationShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationShareViewController.m; sourceTree = "<group>"; };
-		95E76EC91C57C34000FFBA9E /* NaviShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NaviShareViewController.h; sourceTree = "<group>"; };
-		95E76ECA1C57C34000FFBA9E /* NaviShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NaviShareViewController.m; sourceTree = "<group>"; };
-		95E76ECB1C57C34000FFBA9E /* NearbyVewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyVewController.h; sourceTree = "<group>"; };
-		95E76ECC1C57C34000FFBA9E /* NearbyVewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyVewController.m; sourceTree = "<group>"; };
-		95E76ECD1C57C34000FFBA9E /* POIShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POIShareViewController.h; sourceTree = "<group>"; };
-		95E76ECE1C57C34000FFBA9E /* POIShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POIShareViewController.m; sourceTree = "<group>"; };
-		95E76ECF1C57C34000FFBA9E /* PoiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoiViewController.h; sourceTree = "<group>"; };
-		95E76ED01C57C34000FFBA9E /* PoiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PoiViewController.m; sourceTree = "<group>"; };
-		95E76ED11C57C34000FFBA9E /* RoutePlanningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoutePlanningViewController.h; sourceTree = "<group>"; };
-		95E76ED21C57C34000FFBA9E /* RoutePlanningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoutePlanningViewController.m; sourceTree = "<group>"; };
-		95E76ED31C57C34000FFBA9E /* RouteShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteShareViewController.h; sourceTree = "<group>"; };
-		95E76ED41C57C34000FFBA9E /* RouteShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteShareViewController.m; sourceTree = "<group>"; };
-		95E76ED51C57C34000FFBA9E /* ShareSearchBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareSearchBaseViewController.h; sourceTree = "<group>"; };
-		95E76ED61C57C34000FFBA9E /* ShareSearchBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareSearchBaseViewController.m; sourceTree = "<group>"; };
-		95E76ED71C57C34000FFBA9E /* TipViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipViewController.h; sourceTree = "<group>"; };
-		95E76ED81C57C34000FFBA9E /* TipViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipViewController.m; sourceTree = "<group>"; };
-		95E76ED91C57C34000FFBA9E /* WeatherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherViewController.h; sourceTree = "<group>"; };
-		95E76EDA1C57C34000FFBA9E /* WeatherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherViewController.m; sourceTree = "<group>"; };
-		95E76EDC1C57C34000FFBA9E /* AddressComponentDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressComponentDetailViewController.h; sourceTree = "<group>"; };
-		95E76EDD1C57C34000FFBA9E /* AddressComponentDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressComponentDetailViewController.m; sourceTree = "<group>"; };
-		95E76EDE1C57C34000FFBA9E /* AMapCloudPOIDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMapCloudPOIDetailViewController.h; sourceTree = "<group>"; };
-		95E76EDF1C57C34000FFBA9E /* AMapCloudPOIDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMapCloudPOIDetailViewController.m; sourceTree = "<group>"; };
-		95E76EE01C57C34000FFBA9E /* BusLineDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusLineDetailViewController.h; sourceTree = "<group>"; };
-		95E76EE11C57C34000FFBA9E /* BusLineDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusLineDetailViewController.m; sourceTree = "<group>"; };
-		95E76EE21C57C34000FFBA9E /* BusStopDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusStopDetailViewController.h; sourceTree = "<group>"; };
-		95E76EE31C57C34000FFBA9E /* BusStopDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusStopDetailViewController.m; sourceTree = "<group>"; };
-		95E76EE41C57C34000FFBA9E /* GeoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeoDetailViewController.h; sourceTree = "<group>"; };
-		95E76EE51C57C34000FFBA9E /* GeoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeoDetailViewController.m; sourceTree = "<group>"; };
-		95E76EE61C57C34000FFBA9E /* InvertGeoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvertGeoDetailViewController.h; sourceTree = "<group>"; };
-		95E76EE71C57C34000FFBA9E /* InvertGeoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvertGeoDetailViewController.m; sourceTree = "<group>"; };
-		95E76EE81C57C34000FFBA9E /* PathDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathDetailViewController.h; sourceTree = "<group>"; };
-		95E76EE91C57C34000FFBA9E /* PathDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathDetailViewController.m; sourceTree = "<group>"; };
-		95E76EEA1C57C34000FFBA9E /* PoiDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoiDetailViewController.h; sourceTree = "<group>"; };
-		95E76EEB1C57C34000FFBA9E /* PoiDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PoiDetailViewController.m; sourceTree = "<group>"; };
-		95E76EEC1C57C34000FFBA9E /* RoadDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoadDetailViewController.h; sourceTree = "<group>"; };
-		95E76EED1C57C34000FFBA9E /* RoadDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoadDetailViewController.m; sourceTree = "<group>"; };
-		95E76EEE1C57C34000FFBA9E /* RoadInterDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoadInterDetailViewController.h; sourceTree = "<group>"; };
-		95E76EEF1C57C34000FFBA9E /* RoadInterDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoadInterDetailViewController.m; sourceTree = "<group>"; };
-		95E76EF01C57C34000FFBA9E /* RouteDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteDetailViewController.h; sourceTree = "<group>"; };
-		95E76EF11C57C34000FFBA9E /* RouteDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteDetailViewController.m; sourceTree = "<group>"; };
-		95E76EF21C57C34000FFBA9E /* SegmentDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentDetailViewController.h; sourceTree = "<group>"; };
-		95E76EF31C57C34000FFBA9E /* SegmentDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentDetailViewController.m; sourceTree = "<group>"; };
-		95E76EF41C57C34000FFBA9E /* StepDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StepDetailViewController.h; sourceTree = "<group>"; };
-		95E76EF51C57C34000FFBA9E /* StepDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StepDetailViewController.m; sourceTree = "<group>"; };
-		95E76EF61C57C34000FFBA9E /* StreetNumberDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreetNumberDetailViewController.h; sourceTree = "<group>"; };
-		95E76EF71C57C34000FFBA9E /* StreetNumberDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StreetNumberDetailViewController.m; sourceTree = "<group>"; };
-		95E76EF81C57C34000FFBA9E /* SubPoiDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubPoiDetailViewController.h; sourceTree = "<group>"; };
-		95E76EF91C57C34000FFBA9E /* SubPoiDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubPoiDetailViewController.m; sourceTree = "<group>"; };
-		95E76EFA1C57C34000FFBA9E /* SubPoiListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubPoiListViewController.h; sourceTree = "<group>"; };
-		95E76EFB1C57C34000FFBA9E /* SubPoiListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubPoiListViewController.m; sourceTree = "<group>"; };
-		95E76EFC1C57C34000FFBA9E /* TipDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipDetailViewController.h; sourceTree = "<group>"; };
-		95E76EFD1C57C34000FFBA9E /* TipDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipDetailViewController.m; sourceTree = "<group>"; };
-		95E76EFE1C57C34000FFBA9E /* TransitDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransitDetailViewController.h; sourceTree = "<group>"; };
-		95E76EFF1C57C34000FFBA9E /* TransitDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransitDetailViewController.m; sourceTree = "<group>"; };
-		95E76F001C57C34000FFBA9E /* WalkingDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WalkingDetailViewController.h; sourceTree = "<group>"; };
-		95E76F011C57C34000FFBA9E /* WalkingDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WalkingDetailViewController.m; sourceTree = "<group>"; };
 		95E76F041C57C34000FFBA9E /* WMFooldView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMFooldView.h; sourceTree = "<group>"; };
 		95E76F051C57C34000FFBA9E /* WMFooldView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMFooldView.m; sourceTree = "<group>"; };
 		95E76F061C57C34000FFBA9E /* WMMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMMenuItem.h; sourceTree = "<group>"; };
@@ -955,6 +841,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9572F9D71C5B5AA2008D1EDE /* OpenURLBaseControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9572F9D81C5B5AA2008D1EDE /* OpenAMapURLRequestViewController.h */,
+				9572F9D91C5B5AA2008D1EDE /* OpenAMapURLRequestViewController.m */,
+				9572F9DA1C5B5AA2008D1EDE /* OpenURLOnlineNavigationViewController.h */,
+				9572F9DB1C5B5AA2008D1EDE /* OpenURLOnlineNavigationViewController.m */,
+			);
+			path = OpenURLBaseControllers;
+			sourceTree = "<group>";
+		};
 		9583D3341C58AE4200CE5B19 /* PopupVIew */ = {
 			isa = PBXGroup;
 			children = (
@@ -1272,25 +1169,6 @@
 			path = Header;
 			sourceTree = "<group>";
 		};
-		95E76E9D1C57C34000FFBA9E /* OpenURLControllers */ = {
-			isa = PBXGroup;
-			children = (
-				95E76E9E1C57C34000FFBA9E /* OpenURLBaseControllers */,
-			);
-			path = OpenURLControllers;
-			sourceTree = "<group>";
-		};
-		95E76E9E1C57C34000FFBA9E /* OpenURLBaseControllers */ = {
-			isa = PBXGroup;
-			children = (
-				95E76E9F1C57C34000FFBA9E /* OpenAMapURLRequestViewController.h */,
-				95E76EA01C57C34000FFBA9E /* OpenAMapURLRequestViewController.m */,
-				95E76EA11C57C34000FFBA9E /* OpenURLOnlineNavigationViewController.h */,
-				95E76EA21C57C34000FFBA9E /* OpenURLOnlineNavigationViewController.m */,
-			);
-			path = OpenURLBaseControllers;
-			sourceTree = "<group>";
-		};
 		95E76EA31C57C34000FFBA9E /* SDCycleScrollView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1318,105 +1196,6 @@
 				95E76EAC1C57C34000FFBA9E /* TAPageControl.m */,
 			);
 			path = PageControl;
-			sourceTree = "<group>";
-		};
-		95E76EB31C57C34000FFBA9E /* SearchControllers */ = {
-			isa = PBXGroup;
-			children = (
-				95E76EB41C57C34000FFBA9E /* SearchBaseControllers */,
-				95E76EDB1C57C34000FFBA9E /* SearchDetailControllers */,
-			);
-			path = SearchControllers;
-			sourceTree = "<group>";
-		};
-		95E76EB41C57C34000FFBA9E /* SearchBaseControllers */ = {
-			isa = PBXGroup;
-			children = (
-				95E76EB51C57C34000FFBA9E /* BusLineViewController.h */,
-				95E76EB61C57C34000FFBA9E /* BusLineViewController.m */,
-				95E76EB71C57C34000FFBA9E /* BusStopViewController.h */,
-				95E76EB81C57C34000FFBA9E /* BusStopViewController.m */,
-				95E76EB91C57C34000FFBA9E /* CloudPOIAroundSearchViewController.h */,
-				95E76EBA1C57C34000FFBA9E /* CloudPOIAroundSearchViewController.m */,
-				95E76EBB1C57C34000FFBA9E /* CloudPOIIDSearchViewController.h */,
-				95E76EBC1C57C34000FFBA9E /* CloudPOIIDSearchViewController.m */,
-				95E76EBD1C57C34000FFBA9E /* CloudPOILocalSearchViewController.h */,
-				95E76EBE1C57C34000FFBA9E /* CloudPOILocalSearchViewController.m */,
-				95E76EBF1C57C34000FFBA9E /* CloudPOIPolygonSearchViewController.h */,
-				95E76EC01C57C34000FFBA9E /* CloudPOIPolygonSearchViewController.m */,
-				95E76EC11C57C34000FFBA9E /* DistrictViewController.h */,
-				95E76EC21C57C34000FFBA9E /* DistrictViewController.m */,
-				95E76EC31C57C34000FFBA9E /* GeoViewController.h */,
-				95E76EC41C57C34000FFBA9E /* GeoViewController.m */,
-				95E76EC51C57C34000FFBA9E /* InvertGeoViewController.h */,
-				95E76EC61C57C34000FFBA9E /* InvertGeoViewController.m */,
-				95E76EC71C57C34000FFBA9E /* LocationShareViewController.h */,
-				95E76EC81C57C34000FFBA9E /* LocationShareViewController.m */,
-				95E76EC91C57C34000FFBA9E /* NaviShareViewController.h */,
-				95E76ECA1C57C34000FFBA9E /* NaviShareViewController.m */,
-				95E76ECB1C57C34000FFBA9E /* NearbyVewController.h */,
-				95E76ECC1C57C34000FFBA9E /* NearbyVewController.m */,
-				95E76ECD1C57C34000FFBA9E /* POIShareViewController.h */,
-				95E76ECE1C57C34000FFBA9E /* POIShareViewController.m */,
-				95E76ECF1C57C34000FFBA9E /* PoiViewController.h */,
-				95E76ED01C57C34000FFBA9E /* PoiViewController.m */,
-				95E76ED11C57C34000FFBA9E /* RoutePlanningViewController.h */,
-				95E76ED21C57C34000FFBA9E /* RoutePlanningViewController.m */,
-				95E76ED31C57C34000FFBA9E /* RouteShareViewController.h */,
-				95E76ED41C57C34000FFBA9E /* RouteShareViewController.m */,
-				95E76ED51C57C34000FFBA9E /* ShareSearchBaseViewController.h */,
-				95E76ED61C57C34000FFBA9E /* ShareSearchBaseViewController.m */,
-				95E76ED71C57C34000FFBA9E /* TipViewController.h */,
-				95E76ED81C57C34000FFBA9E /* TipViewController.m */,
-				95E76ED91C57C34000FFBA9E /* WeatherViewController.h */,
-				95E76EDA1C57C34000FFBA9E /* WeatherViewController.m */,
-			);
-			path = SearchBaseControllers;
-			sourceTree = "<group>";
-		};
-		95E76EDB1C57C34000FFBA9E /* SearchDetailControllers */ = {
-			isa = PBXGroup;
-			children = (
-				95E76EDC1C57C34000FFBA9E /* AddressComponentDetailViewController.h */,
-				95E76EDD1C57C34000FFBA9E /* AddressComponentDetailViewController.m */,
-				95E76EDE1C57C34000FFBA9E /* AMapCloudPOIDetailViewController.h */,
-				95E76EDF1C57C34000FFBA9E /* AMapCloudPOIDetailViewController.m */,
-				95E76EE01C57C34000FFBA9E /* BusLineDetailViewController.h */,
-				95E76EE11C57C34000FFBA9E /* BusLineDetailViewController.m */,
-				95E76EE21C57C34000FFBA9E /* BusStopDetailViewController.h */,
-				95E76EE31C57C34000FFBA9E /* BusStopDetailViewController.m */,
-				95E76EE41C57C34000FFBA9E /* GeoDetailViewController.h */,
-				95E76EE51C57C34000FFBA9E /* GeoDetailViewController.m */,
-				95E76EE61C57C34000FFBA9E /* InvertGeoDetailViewController.h */,
-				95E76EE71C57C34000FFBA9E /* InvertGeoDetailViewController.m */,
-				95E76EE81C57C34000FFBA9E /* PathDetailViewController.h */,
-				95E76EE91C57C34000FFBA9E /* PathDetailViewController.m */,
-				95E76EEA1C57C34000FFBA9E /* PoiDetailViewController.h */,
-				95E76EEB1C57C34000FFBA9E /* PoiDetailViewController.m */,
-				95E76EEC1C57C34000FFBA9E /* RoadDetailViewController.h */,
-				95E76EED1C57C34000FFBA9E /* RoadDetailViewController.m */,
-				95E76EEE1C57C34000FFBA9E /* RoadInterDetailViewController.h */,
-				95E76EEF1C57C34000FFBA9E /* RoadInterDetailViewController.m */,
-				95E76EF01C57C34000FFBA9E /* RouteDetailViewController.h */,
-				95E76EF11C57C34000FFBA9E /* RouteDetailViewController.m */,
-				95E76EF21C57C34000FFBA9E /* SegmentDetailViewController.h */,
-				95E76EF31C57C34000FFBA9E /* SegmentDetailViewController.m */,
-				95E76EF41C57C34000FFBA9E /* StepDetailViewController.h */,
-				95E76EF51C57C34000FFBA9E /* StepDetailViewController.m */,
-				95E76EF61C57C34000FFBA9E /* StreetNumberDetailViewController.h */,
-				95E76EF71C57C34000FFBA9E /* StreetNumberDetailViewController.m */,
-				95E76EF81C57C34000FFBA9E /* SubPoiDetailViewController.h */,
-				95E76EF91C57C34000FFBA9E /* SubPoiDetailViewController.m */,
-				95E76EFA1C57C34000FFBA9E /* SubPoiListViewController.h */,
-				95E76EFB1C57C34000FFBA9E /* SubPoiListViewController.m */,
-				95E76EFC1C57C34000FFBA9E /* TipDetailViewController.h */,
-				95E76EFD1C57C34000FFBA9E /* TipDetailViewController.m */,
-				95E76EFE1C57C34000FFBA9E /* TransitDetailViewController.h */,
-				95E76EFF1C57C34000FFBA9E /* TransitDetailViewController.m */,
-				95E76F001C57C34000FFBA9E /* WalkingDetailViewController.h */,
-				95E76F011C57C34000FFBA9E /* WalkingDetailViewController.m */,
-			);
-			path = SearchDetailControllers;
 			sourceTree = "<group>";
 		};
 		95E76F021C57C34000FFBA9E /* WMPageController */ = {
@@ -1905,14 +1684,13 @@
 		95EFB8891C492946006CFC9D /* TheThird */ = {
 			isa = PBXGroup;
 			children = (
+				9572F9D71C5B5AA2008D1EDE /* OpenURLBaseControllers */,
 				9583D3341C58AE4200CE5B19 /* PopupVIew */,
 				C276D5B31C5874C1008DD052 /* YYWebImage */,
 				95E76E091C57C34000FFBA9E /* FDSlideBar */,
 				95E76E0E1C57C34000FFBA9E /* MapControllers */,
 				95E76E701C57C34000FFBA9E /* MJRefresh */,
-				95E76E9D1C57C34000FFBA9E /* OpenURLControllers */,
 				95E76EA31C57C34000FFBA9E /* SDCycleScrollView */,
-				95E76EB31C57C34000FFBA9E /* SearchControllers */,
 				95E76F021C57C34000FFBA9E /* WMPageController */,
 				95EF99F91C5711CA006DEBCD /* SDWebImage */,
 				95EF27AB1C4A3FAD004654C6 /* umeng_ios_social_sdk_4.4_arm64_custom */,
@@ -2212,7 +1990,6 @@
 				95A169081C51103500088DE8 /* LoginViewController.m in Sources */,
 				95A169071C51012700088DE8 /* SHValidationResult.m in Sources */,
 				95E76F5A1C57C34000FFBA9E /* UIView+SDExtension.m in Sources */,
-				95E76F531C57C34000FFBA9E /* OpenURLOnlineNavigationViewController.m in Sources */,
 				95E76F1F1C57C34000FFBA9E /* OverlayViewController.m in Sources */,
 				95E76F121C57C34000FFBA9E /* FDSlideBarItem.m in Sources */,
 				95E76F851C57C34000FFBA9E /* WMScrollView.m in Sources */,
@@ -2231,20 +2008,16 @@
 				95E76F471C57C34000FFBA9E /* MJRefreshBackGifFooter.m in Sources */,
 				95E76F1B1C57C34000FFBA9E /* GestureAttributesViewController.m in Sources */,
 				95E76F261C57C34000FFBA9E /* ScreenshotDetailViewController.m in Sources */,
-				95E76F5D1C57C34000FFBA9E /* CloudPOIAroundSearchViewController.m in Sources */,
 				95E76FB81C57CC5400FFBA9E /* ElementModel.m in Sources */,
 				95E76F4B1C57C34000FFBA9E /* MJRefreshNormalHeader.m in Sources */,
 				95E76F201C57C34000FFBA9E /* RunningLineViewController.m in Sources */,
-				95E76F6B1C57C34000FFBA9E /* ShareSearchBaseViewController.m in Sources */,
-				95E76F7B1C57C34000FFBA9E /* StreetNumberDetailViewController.m in Sources */,
+				9572F9DC1C5B5AA2008D1EDE /* OpenAMapURLRequestViewController.m in Sources */,
 				95EF9A281C5711CA006DEBCD /* UIImageView+HighlightedWebCache.m in Sources */,
 				95E76F391C57C34000FFBA9E /* CustomAnnotationView.m in Sources */,
-				95E76F721C57C34000FFBA9E /* GeoDetailViewController.m in Sources */,
 				C276D5EB1C5874C1008DD052 /* YYImageCache.m in Sources */,
 				95E76DDC1C57C17300FFBA9E /* TourismTableViewCell.m in Sources */,
 				95E76F421C57C34000FFBA9E /* MJRefreshFooter.m in Sources */,
 				95F06A8B1C5721D600AF25CD /* FriendsListController.m in Sources */,
-				95E76F6E1C57C34000FFBA9E /* AddressComponentDetailViewController.m in Sources */,
 				95D1FEF71C4D2A65004F3A8F /* phonerRegisterController.m in Sources */,
 				95F252651C4E8E0B00C45CBD /* SetupTableViewController.m in Sources */,
 				95E76F271C57C34000FFBA9E /* AMapTipAnnotation.m in Sources */,
@@ -2257,18 +2030,14 @@
 				95E76F381C57C34000FFBA9E /* AnimatedAnnotationView.m in Sources */,
 				95E76F2B1C57C34000FFBA9E /* CustomOverlay.m in Sources */,
 				95E76FBB1C57CC5400FFBA9E /* userModel.m in Sources */,
-				95E76F5C1C57C34000FFBA9E /* BusStopViewController.m in Sources */,
 				95E76F2D1C57C34000FFBA9E /* LineDashPolyline.m in Sources */,
 				C276D5E41C5874C1008DD052 /* UIImage+YYWebImage.m in Sources */,
-				95E76F7F1C57C34000FFBA9E /* TransitDetailViewController.m in Sources */,
-				95E76F7A1C57C34000FFBA9E /* StepDetailViewController.m in Sources */,
 				9583D33A1C58AE4200CE5B19 /* UIViewController+MJPopupViewController.m in Sources */,
 				95EE464B1C56529A00960B2C /* GenderController.m in Sources */,
 				95E76F191C57C34000FFBA9E /* CustomUserLocationViewController.m in Sources */,
 				95EF9A271C5711CA006DEBCD /* UIImage+WebP.m in Sources */,
 				95E76F2A1C57C34000FFBA9E /* CloudPOIAnnotation.m in Sources */,
 				95E76F361C57C34000FFBA9E /* NSArray+PureLayout.m in Sources */,
-				95E76F6C1C57C34000FFBA9E /* TipViewController.m in Sources */,
 				C276D5E81C5874C1008DD052 /* YYImage.m in Sources */,
 				95E76FB71C57CC5400FFBA9E /* DestinationCityModel.m in Sources */,
 				95EF9A1F1C5711CA006DEBCD /* SDWebImageDecoder.m in Sources */,
@@ -2279,15 +2048,12 @@
 				95E76F221C57C34000FFBA9E /* TileOverlayViewController.m in Sources */,
 				95EF9A1D1C5711CA006DEBCD /* SDImageCache.m in Sources */,
 				95E76F321C57C34000FFBA9E /* POIAnnotation.m in Sources */,
-				95E76F771C57C34000FFBA9E /* RoadInterDetailViewController.m in Sources */,
-				95E76F681C57C34000FFBA9E /* PoiViewController.m in Sources */,
 				95E76FD01C57CC7400FFBA9E /* searchTTableViewCell.m in Sources */,
 				95E76DF81C57C1D600FFBA9E /* TourismModel.m in Sources */,
 				95E76F2F1C57C34000FFBA9E /* MANaviAnnotation.m in Sources */,
 				C276D5E61C5874C1008DD052 /* YYAnimatedImageView.m in Sources */,
 				95F2525F1C4DE66B00C45CBD /* AccountLoginViewController.m in Sources */,
 				C276D5E91C5874C1008DD052 /* YYImageCoder.m in Sources */,
-				95E76F5E1C57C34000FFBA9E /* CloudPOIIDSearchViewController.m in Sources */,
 				95D1FEF21C4D28AF004F3A8F /* registerViewController.m in Sources */,
 				95A169031C51012700088DE8 /* NSString+LevenshteinDistance.m in Sources */,
 				95E76F241C57C34000FFBA9E /* UserLocationViewController.m in Sources */,
@@ -2298,40 +2064,30 @@
 				C276D5EA1C5874C1008DD052 /* YYSpriteSheetImage.m in Sources */,
 				95E76FA71C57CC2300FFBA9E /* SearchResultTableViewController.m in Sources */,
 				95E76FA61C57CC2300FFBA9E /* SearchCollectionViewController.m in Sources */,
-				95E76F801C57C34000FFBA9E /* WalkingDetailViewController.m in Sources */,
 				95E76F351C57C34000FFBA9E /* ALView+PureLayout.m in Sources */,
 				95E76FDD1C57CCC400FFBA9E /* getMoreCityTools.m in Sources */,
 				95E76F181C57C34000FFBA9E /* CustomOverlayViewController.m in Sources */,
 				95E76F131C57C34000FFBA9E /* BaseMapViewController.m in Sources */,
-				95E76F6A1C57C34000FFBA9E /* RouteShareViewController.m in Sources */,
 				95E76DDD1C57C17300FFBA9E /* TourismTableViewController.m in Sources */,
 				95E76F4C1C57C34000FFBA9E /* MJRefreshStateHeader.m in Sources */,
-				95E76F761C57C34000FFBA9E /* RoadDetailViewController.m in Sources */,
 				95F06AA01C578DB600AF25CD /* userNameController.m in Sources */,
 				95E76F3C1C57C34000FFBA9E /* MANaviAnnotationView.m in Sources */,
-				95E76F711C57C34000FFBA9E /* BusStopDetailViewController.m in Sources */,
 				95E76F461C57C34000FFBA9E /* MJRefreshAutoStateFooter.m in Sources */,
-				95E76F651C57C34000FFBA9E /* NaviShareViewController.m in Sources */,
 				95E76F301C57C34000FFBA9E /* MANaviPolyline.m in Sources */,
 				9572F9A41C5B0D5B008D1EDE /* PlaceholderTextView.m in Sources */,
 				95E76FB91C57CC5400FFBA9E /* placeModel.m in Sources */,
-				95E76F641C57C34000FFBA9E /* LocationShareViewController.m in Sources */,
 				95E76FBA1C57CC5400FFBA9E /* tripModel.m in Sources */,
 				95E76F441C57C34000FFBA9E /* MJRefreshAutoGifFooter.m in Sources */,
 				95E76F141C57C34000FFBA9E /* AddGestureViewController.m in Sources */,
 				95EF9A1E1C5711CA006DEBCD /* SDWebImageCompat.m in Sources */,
-				95E76F611C57C34000FFBA9E /* DistrictViewController.m in Sources */,
 				95E76DF61C57C1D600FFBA9E /* RecommendModel.m in Sources */,
-				95E76F631C57C34000FFBA9E /* InvertGeoViewController.m in Sources */,
 				95E76F171C57C34000FFBA9E /* CustomAnnotationViewController.m in Sources */,
 				95E76F861C57C34000FFBA9E /* WMPageController.m in Sources */,
 				95E76FCD1C57CC7400FFBA9E /* CitySearchView.m in Sources */,
 				95E76E051C57C1EB00FFBA9E /* CollectionReusableView.m in Sources */,
 				95E76DE01C57C17300FFBA9E /* NearbyMainViewController.m in Sources */,
-				95E76F751C57C34000FFBA9E /* PoiDetailViewController.m in Sources */,
 				95E76F4A1C57C34000FFBA9E /* MJRefreshGifHeader.m in Sources */,
 				95E76F161C57C34000FFBA9E /* AnnotationViewController.m in Sources */,
-				95E76F6F1C57C34000FFBA9E /* AMapCloudPOIDetailViewController.m in Sources */,
 				95E76DFD1C57C1D600FFBA9E /* StoryUserModel.m in Sources */,
 				95D1FEE21C4CE877004F3A8F /* NSDictionary-DeepMutableCopy.m in Sources */,
 				95EF9A251C5711CA006DEBCD /* UIImage+GIF.m in Sources */,
@@ -2349,7 +2105,6 @@
 				95E76DFB1C57C1D600FFBA9E /* ProductModel.m in Sources */,
 				95E76F2E1C57C34000FFBA9E /* LocalTileOverlay.m in Sources */,
 				95E76FCE1C57CC7400FFBA9E /* searchPTableViewCell.m in Sources */,
-				95E76F6D1C57C34000FFBA9E /* WeatherViewController.m in Sources */,
 				95AA92531C53781400A77297 /* headPhotoController.m in Sources */,
 				C276D5E11C5874C1008DD052 /* CALayer+YYWebImage.m in Sources */,
 				95EF28161C4A7620004654C6 /* PhoneViewController.m in Sources */,
@@ -2359,7 +2114,6 @@
 				95E76F511C57C34000FFBA9E /* UIView+MJExtension.m in Sources */,
 				9572F9D61C5B4974008D1EDE /* SignatureViewController.m in Sources */,
 				95E76F561C57C34000FFBA9E /* TADotView.m in Sources */,
-				95E76F741C57C34000FFBA9E /* PathDetailViewController.m in Sources */,
 				95E76FDF1C57CCC400FFBA9E /* getSearchData.m in Sources */,
 				95E76DFA1C57C1D600FFBA9E /* StoryDetailModel.m in Sources */,
 				95E76DDA1C57C17300FFBA9E /* StoryDetailTableViewCell.m in Sources */,
@@ -2368,14 +2122,12 @@
 				95E76FA51C57CC2300FFBA9E /* MoreCityCollectionViewController.m in Sources */,
 				95E76FDE1C57CCC400FFBA9E /* SearchDataTools.m in Sources */,
 				95E76F111C57C34000FFBA9E /* FDSlideBar.m in Sources */,
-				95E76F601C57C34000FFBA9E /* CloudPOIPolygonSearchViewController.m in Sources */,
 				95E76F541C57C34000FFBA9E /* TAAbstractDotView.m in Sources */,
 				95F06AA51C57AC7300AF25CD /* ChangePasswordController.m in Sources */,
 				95E76FCB1C57CC7400FFBA9E /* DestinatioinCollectionViewCell.m in Sources */,
 				C276D5DE1C5874C1008DD052 /* YYKVStorage.m in Sources */,
 				95E76DD81C57C17300FFBA9E /* StoryAllCollectionViewController.m in Sources */,
 				95EF27791C49D38C004654C6 /* FriendController.m in Sources */,
-				95E76F791C57C34000FFBA9E /* SegmentDetailViewController.m in Sources */,
 				95E76F291C57C34000FFBA9E /* BusStopAnnotation.m in Sources */,
 				95E76F821C57C34000FFBA9E /* WMMenuItem.m in Sources */,
 				95E76F311C57C34000FFBA9E /* MANaviRoute.m in Sources */,
@@ -2383,8 +2135,6 @@
 				95E76F3B1C57C34000FFBA9E /* CustomOverlayRenderer.m in Sources */,
 				C276D5ED1C5874C1008DD052 /* YYWebImageOperation.m in Sources */,
 				95EF9A291C5711CA006DEBCD /* UIImageView+WebCache.m in Sources */,
-				95E76F5B1C57C34000FFBA9E /* BusLineViewController.m in Sources */,
-				95E76F7D1C57C34000FFBA9E /* SubPoiListViewController.m in Sources */,
 				C276D5DF1C5874C1008DD052 /* YYMemoryCache.m in Sources */,
 				C276D5E51C5874C1008DD052 /* UIImageView+YYWebImage.m in Sources */,
 				95E76FB61C57CC5400FFBA9E /* scorllDataModel.m in Sources */,
@@ -2395,25 +2145,18 @@
 				95E76F991C57C6DE00FFBA9E /* DataBaseTool.m in Sources */,
 				95E76F341C57C34000FFBA9E /* CommonUtility.m in Sources */,
 				95E76F211C57C34000FFBA9E /* ScreenshotViewController.m in Sources */,
-				95E76F7E1C57C34000FFBA9E /* TipDetailViewController.m in Sources */,
 				95E76F491C57C34000FFBA9E /* MJRefreshBackStateFooter.m in Sources */,
-				95E76F671C57C34000FFBA9E /* POIShareViewController.m in Sources */,
 				95E76DD91C57C17300FFBA9E /* StoryDetail_TableViewController.m in Sources */,
 				95A169061C51012700088DE8 /* SHEmailValidator.m in Sources */,
 				95E76F431C57C34000FFBA9E /* MJRefreshHeader.m in Sources */,
 				95E76F281C57C34000FFBA9E /* AnimatedAnnotation.m in Sources */,
 				95EF9A201C5711CA006DEBCD /* SDWebImageDownloader.m in Sources */,
-				95E76F661C57C34000FFBA9E /* NearbyVewController.m in Sources */,
 				95EF9A1C1C5711CA006DEBCD /* NSData+ImageContentType.m in Sources */,
 				95E76FDC1C57CCC400FFBA9E /* getDestinationTools.m in Sources */,
 				9583D3391C58AE4200CE5B19 /* MJPopupBackgroundView.m in Sources */,
-				95E76F781C57C34000FFBA9E /* RouteDetailViewController.m in Sources */,
 				95EFB8641C4928B6006CFC9D /* main.m in Sources */,
 				95E76FD21C57CC7400FFBA9E /* searchUTableViewCell.m in Sources */,
-				95E76F621C57C34000FFBA9E /* GeoViewController.m in Sources */,
-				95E76F5F1C57C34000FFBA9E /* CloudPOILocalSearchViewController.m in Sources */,
 				95E76F3E1C57C34000FFBA9E /* MAWeatherLiveView.m in Sources */,
-				95E76F7C1C57C34000FFBA9E /* SubPoiDetailViewController.m in Sources */,
 				95E76DF71C57C1D600FFBA9E /* carouselModel.m in Sources */,
 				95E76E071C57C1EB00FFBA9E /* StoryDetailFooterCollectionReusableView.m in Sources */,
 				95E76F151C57C34000FFBA9E /* AnimatedAnnotationViewController.m in Sources */,
@@ -2425,14 +2168,11 @@
 				95E76DE21C57C17300FFBA9E /* NearbyTableViewCell.m in Sources */,
 				95EF9A241C5711CA006DEBCD /* UIButton+WebCache.m in Sources */,
 				95E76F231C57C34000FFBA9E /* TrafficViewController.m in Sources */,
-				95E76F691C57C34000FFBA9E /* RoutePlanningViewController.m in Sources */,
-				95E76F521C57C34000FFBA9E /* OpenAMapURLRequestViewController.m in Sources */,
 				95E76F3A1C57C34000FFBA9E /* CustomCalloutView.m in Sources */,
 				C276D5DD1C5874C1008DD052 /* YYDiskCache.m in Sources */,
 				95EE04F31C50F68300350B06 /* TextFieldValidator.m in Sources */,
 				C276D5E01C5874C1008DD052 /* _YYWebImageSetter.m in Sources */,
-				95E76F731C57C34000FFBA9E /* InvertGeoDetailViewController.m in Sources */,
-				95E76F701C57C34000FFBA9E /* BusLineDetailViewController.m in Sources */,
+				9572F9DD1C5B5AA2008D1EDE /* OpenURLOnlineNavigationViewController.m in Sources */,
 				C276D5E31C5874C1008DD052 /* UIButton+YYWebImage.m in Sources */,
 				95E76F1D1C57C34000FFBA9E /* HeatMapTileOverlayViewController.m in Sources */,
 				95A169051C51012700088DE8 /* SHEmailValidationTextField.m in Sources */,

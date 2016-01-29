@@ -15,5 +15,5 @@
 #import "MJRefresh.h"
 #import "YYWebImage.h"
 #import "FDSlideBar.h"
-#import "MapViewController.h"
+//#import "MapViewController.h"
 #endif

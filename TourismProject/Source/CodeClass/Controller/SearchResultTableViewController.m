@@ -81,10 +81,6 @@ static NSString *const searchUID = @"searchUIdentifier";
         
          dispatch_async(dispatch_get_main_queue(), ^{
              [self.tableView reloadData];
-             NSLog(@"----%@",self.placesArr);
-             NSLog(@"++++%@",self.tripsArr);
-             NSLog(@"====%@",self.usersArr);
-
          });
      }];
     

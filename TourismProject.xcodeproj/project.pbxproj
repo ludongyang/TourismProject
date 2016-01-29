@@ -230,6 +230,10 @@
 		95F252601C4DE66B00C45CBD /* AccountLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95F2525E1C4DE66B00C45CBD /* AccountLoginViewController.xib */; };
 		95F252621C4E8A8500C45CBD /* backview.png in Resources */ = {isa = PBXBuildFile; fileRef = 95F252611C4E8A8500C45CBD /* backview.png */; };
 		95F252651C4E8E0B00C45CBD /* SetupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F252641C4E8E0B00C45CBD /* SetupTableViewController.m */; };
+		BE2448F31C5B6C0100D4C35F /* DestinationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE2448F21C5B6C0100D4C35F /* DestinationDetailViewController.m */; };
+		BE2448F61C5B6C1C00D4C35F /* ExpandHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = BE2448F51C5B6C1C00D4C35F /* ExpandHeader.m */; };
+		BE2448FA1C5B6C3700D4C35F /* LabelCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE2448F81C5B6C3700D4C35F /* LabelCollectionViewCell.m */; };
+		BE2448FB1C5B6C3700D4C35F /* LabelCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE2448F91C5B6C3700D4C35F /* LabelCollectionViewCell.xib */; };
 		C2106F231C59F4CF00B45792 /* CustomAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = C2106F221C59F4CF00B45792 /* CustomAnnotation.m */; };
 		C276D5DC1C5874C1008DD052 /* YYCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C276D5B61C5874C1008DD052 /* YYCache.m */; };
 		C276D5DD1C5874C1008DD052 /* YYDiskCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C276D5B81C5874C1008DD052 /* YYDiskCache.m */; };
@@ -641,6 +645,13 @@
 		95F252611C4E8A8500C45CBD /* backview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backview.png; sourceTree = "<group>"; };
 		95F252631C4E8E0B00C45CBD /* SetupTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetupTableViewController.h; sourceTree = "<group>"; };
 		95F252641C4E8E0B00C45CBD /* SetupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetupTableViewController.m; sourceTree = "<group>"; };
+		BE2448F11C5B6C0100D4C35F /* DestinationDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DestinationDetailViewController.h; sourceTree = "<group>"; };
+		BE2448F21C5B6C0100D4C35F /* DestinationDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DestinationDetailViewController.m; sourceTree = "<group>"; };
+		BE2448F41C5B6C1C00D4C35F /* ExpandHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpandHeader.h; sourceTree = "<group>"; };
+		BE2448F51C5B6C1C00D4C35F /* ExpandHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpandHeader.m; sourceTree = "<group>"; };
+		BE2448F71C5B6C3700D4C35F /* LabelCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelCollectionViewCell.h; sourceTree = "<group>"; };
+		BE2448F81C5B6C3700D4C35F /* LabelCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelCollectionViewCell.m; sourceTree = "<group>"; };
+		BE2448F91C5B6C3700D4C35F /* LabelCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabelCollectionViewCell.xib; sourceTree = "<group>"; };
 		C2106F211C59F4CF00B45792 /* CustomAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAnnotation.h; sourceTree = "<group>"; };
 		C2106F221C59F4CF00B45792 /* CustomAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAnnotation.m; sourceTree = "<group>"; };
 		C276D5B51C5874C1008DD052 /* YYCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYCache.h; sourceTree = "<group>"; };
@@ -956,6 +967,8 @@
 		95E76FA91C57CC2C00FFBA9E /* New Group */ = {
 			isa = PBXGroup;
 			children = (
+				BE2448F11C5B6C0100D4C35F /* DestinationDetailViewController.h */,
+				BE2448F21C5B6C0100D4C35F /* DestinationDetailViewController.m */,
 				95E76F9A1C57CC2300FFBA9E /* DestinationViewController.h */,
 				95E76F9B1C57CC2300FFBA9E /* DestinationViewController.m */,
 				95E76F9C1C57CC2300FFBA9E /* MoreCityCollectionViewController.h */,
@@ -1202,6 +1215,8 @@
 		95EFB87D1C492946006CFC9D /* BaseClass */ = {
 			isa = PBXGroup;
 			children = (
+				BE2448F41C5B6C1C00D4C35F /* ExpandHeader.h */,
+				BE2448F51C5B6C1C00D4C35F /* ExpandHeader.m */,
 				95E76F971C57C6DE00FFBA9E /* DataBaseTool.h */,
 				95E76F981C57C6DE00FFBA9E /* DataBaseTool.m */,
 				95E76FD41C57CCC400FFBA9E /* getDestinationTools.h */,
@@ -1330,6 +1345,9 @@
 		95EFB8811C492946006CFC9D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BE2448F71C5B6C3700D4C35F /* LabelCollectionViewCell.h */,
+				BE2448F81C5B6C3700D4C35F /* LabelCollectionViewCell.m */,
+				BE2448F91C5B6C3700D4C35F /* LabelCollectionViewCell.xib */,
 				9572F9EB1C5B62C6008D1EDE /* PlaceholderTextView.h */,
 				9572F9EC1C5B62C6008D1EDE /* PlaceholderTextView.m */,
 				95EE46431C5640E600960B2C /* UIView+Extension.h */,
@@ -1651,6 +1669,7 @@
 				95E76DD51C57C17300FFBA9E /* TravelNoteCollectionViewCell.xib in Resources */,
 				95EF278E1C49E17B004654C6 /* iconfont-youxishoubing.png in Resources */,
 				95EFB8721C4928B6006CFC9D /* LaunchScreen.storyboard in Resources */,
+				BE2448FB1C5B6C3700D4C35F /* LabelCollectionViewCell.xib in Resources */,
 				95EE04531C4F276F00350B06 /* iconfont-shezhi.png in Resources */,
 				95EFB86F1C4928B6006CFC9D /* Assets.xcassets in Resources */,
 				95EF27FD1C4A3FAD004654C6 /* ios-social-sdk-share-quick.html in Resources */,
@@ -1762,6 +1781,7 @@
 				C276D5EB1C5874C1008DD052 /* YYImageCache.m in Sources */,
 				95E76DDC1C57C17300FFBA9E /* TourismTableViewCell.m in Sources */,
 				95E76F421C57C34000FFBA9E /* MJRefreshFooter.m in Sources */,
+				BE2448FA1C5B6C3700D4C35F /* LabelCollectionViewCell.m in Sources */,
 				95F06A8B1C5721D600AF25CD /* FriendsListController.m in Sources */,
 				95D1FEF71C4D2A65004F3A8F /* phonerRegisterController.m in Sources */,
 				95F252651C4E8E0B00C45CBD /* SetupTableViewController.m in Sources */,
@@ -1769,6 +1789,7 @@
 				95E76FCC1C57CC7400FFBA9E /* DestinationSectionHeader.m in Sources */,
 				C276D5EC1C5874C1008DD052 /* YYWebImageManager.m in Sources */,
 				9572F9E91C5B6278008D1EDE /* DateViewController.m in Sources */,
+				BE2448F61C5B6C1C00D4C35F /* ExpandHeader.m in Sources */,
 				95F06A9B1C57524F00AF25CD /* regetController.m in Sources */,
 				95E76FBB1C57CC5400FFBA9E /* userModel.m in Sources */,
 				C276D5E41C5874C1008DD052 /* UIImage+YYWebImage.m in Sources */,
@@ -1847,6 +1868,7 @@
 				95E76F111C57C34000FFBA9E /* FDSlideBar.m in Sources */,
 				95E76F541C57C34000FFBA9E /* TAAbstractDotView.m in Sources */,
 				95F06AA51C57AC7300AF25CD /* ChangePasswordController.m in Sources */,
+				BE2448F31C5B6C0100D4C35F /* DestinationDetailViewController.m in Sources */,
 				95E76FCB1C57CC7400FFBA9E /* DestinatioinCollectionViewCell.m in Sources */,
 				C276D5DE1C5874C1008DD052 /* YYKVStorage.m in Sources */,
 				95E76DD81C57C17300FFBA9E /* StoryAllCollectionViewController.m in Sources */,

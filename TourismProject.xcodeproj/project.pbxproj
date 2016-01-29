@@ -230,6 +230,8 @@
 		BE2448F61C5B6C1C00D4C35F /* ExpandHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = BE2448F51C5B6C1C00D4C35F /* ExpandHeader.m */; };
 		BE2448FA1C5B6C3700D4C35F /* LabelCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE2448F81C5B6C3700D4C35F /* LabelCollectionViewCell.m */; };
 		BE2448FB1C5B6C3700D4C35F /* LabelCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE2448F91C5B6C3700D4C35F /* LabelCollectionViewCell.xib */; };
+		BE2449001C5B9C7D00D4C35F /* AMap.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BE2448FE1C5B9C7D00D4C35F /* AMap.bundle */; };
+		BE2449011C5B9C7D00D4C35F /* AMapNavi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BE2448FF1C5B9C7D00D4C35F /* AMapNavi.bundle */; };
 		C2106F231C59F4CF00B45792 /* CustomAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = C2106F221C59F4CF00B45792 /* CustomAnnotation.m */; };
 		C276D5DC1C5874C1008DD052 /* YYCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C276D5B61C5874C1008DD052 /* YYCache.m */; };
 		C276D5DD1C5874C1008DD052 /* YYDiskCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C276D5B81C5874C1008DD052 /* YYDiskCache.m */; };
@@ -254,12 +256,12 @@
 		C276D64D1C58DE5C008DD052 /* iconfont-dingwei (1).png in Resources */ = {isa = PBXBuildFile; fileRef = C276D6471C58DE5C008DD052 /* iconfont-dingwei (1).png */; };
 		C276D64E1C58DE5C008DD052 /* iconfont-morentu.png in Resources */ = {isa = PBXBuildFile; fileRef = C276D6481C58DE5C008DD052 /* iconfont-morentu.png */; };
 		C276D64F1C58DE5C008DD052 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C276D64A1C58DE5C008DD052 /* MapViewController.m */; };
-		C29274D01C5B8C2100857AD8 /* AMapLocationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C29274CC1C5B8C2100857AD8 /* AMapLocationKit.framework */; settings = {ASSET_TAGS = (); }; };
-		C29274D11C5B8C2100857AD8 /* AMapNaviKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C29274CD1C5B8C2100857AD8 /* AMapNaviKit.framework */; settings = {ASSET_TAGS = (); }; };
-		C29274D21C5B8C2100857AD8 /* AMapSearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C29274CE1C5B8C2100857AD8 /* AMapSearchKit.framework */; settings = {ASSET_TAGS = (); }; };
-		C29274D31C5B8C2100857AD8 /* iflyMSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C29274CF1C5B8C2100857AD8 /* iflyMSC.framework */; settings = {ASSET_TAGS = (); }; };
-		C29274D91C5B8CF500857AD8 /* MJPopupBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = C29274D61C5B8CF500857AD8 /* MJPopupBackgroundView.m */; settings = {ASSET_TAGS = (); }; };
-		C29274DA1C5B8CF500857AD8 /* UIViewController+MJPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29274D81C5B8CF500857AD8 /* UIViewController+MJPopupViewController.m */; settings = {ASSET_TAGS = (); }; };
+		C29274D01C5B8C2100857AD8 /* AMapLocationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C29274CC1C5B8C2100857AD8 /* AMapLocationKit.framework */; };
+		C29274D11C5B8C2100857AD8 /* AMapNaviKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C29274CD1C5B8C2100857AD8 /* AMapNaviKit.framework */; };
+		C29274D21C5B8C2100857AD8 /* AMapSearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C29274CE1C5B8C2100857AD8 /* AMapSearchKit.framework */; };
+		C29274D31C5B8C2100857AD8 /* iflyMSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C29274CF1C5B8C2100857AD8 /* iflyMSC.framework */; };
+		C29274D91C5B8CF500857AD8 /* MJPopupBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = C29274D61C5B8CF500857AD8 /* MJPopupBackgroundView.m */; };
+		C29274DA1C5B8CF500857AD8 /* UIViewController+MJPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29274D81C5B8CF500857AD8 /* UIViewController+MJPopupViewController.m */; };
 		C29274DC1C5B8D3600857AD8 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C29274DB1C5B8D3600857AD8 /* AddressBook.framework */; };
 		F03895BBD038B8E08F8AA058 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C367D2A5AD749BFFCA49409 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -648,6 +650,8 @@
 		BE2448F71C5B6C3700D4C35F /* LabelCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelCollectionViewCell.h; sourceTree = "<group>"; };
 		BE2448F81C5B6C3700D4C35F /* LabelCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelCollectionViewCell.m; sourceTree = "<group>"; };
 		BE2448F91C5B6C3700D4C35F /* LabelCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabelCollectionViewCell.xib; sourceTree = "<group>"; };
+		BE2448FE1C5B9C7D00D4C35F /* AMap.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AMap.bundle; path = AMapNaviKit.framework/Versions/1.5.0.3533b29/Resources/AMap.bundle; sourceTree = "<group>"; };
+		BE2448FF1C5B9C7D00D4C35F /* AMapNavi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AMapNavi.bundle; path = AMapNaviKit.framework/Versions/1.5.0.3533b29/Resources/AMapNavi.bundle; sourceTree = "<group>"; };
 		C2106F211C59F4CF00B45792 /* CustomAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAnnotation.h; sourceTree = "<group>"; };
 		C2106F221C59F4CF00B45792 /* CustomAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAnnotation.m; sourceTree = "<group>"; };
 		C276D5B51C5874C1008DD052 /* YYCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYCache.h; sourceTree = "<group>"; };
@@ -1555,6 +1559,8 @@
 		C29274CB1C5B8C2100857AD8 /* map */ = {
 			isa = PBXGroup;
 			children = (
+				BE2448FE1C5B9C7D00D4C35F /* AMap.bundle */,
+				BE2448FF1C5B9C7D00D4C35F /* AMapNavi.bundle */,
 				C29274CC1C5B8C2100857AD8 /* AMapLocationKit.framework */,
 				C29274CD1C5B8C2100857AD8 /* AMapNaviKit.framework */,
 				C29274CE1C5B8C2100857AD8 /* AMapSearchKit.framework */,
@@ -1673,6 +1679,7 @@
 				95EF27841C49DE9F004654C6 /* user1.png in Resources */,
 				95F06A8F1C57249500AF25CD /* friend.png in Resources */,
 				95EF27FF1C4A3FAD004654C6 /* markdown.css in Resources */,
+				BE2449001C5B9C7D00D4C35F /* AMap.bundle in Resources */,
 				95EF27AA1C4A2C9D004654C6 /* iconfont-xinlang.png in Resources */,
 				C276D64E1C58DE5C008DD052 /* iconfont-morentu.png in Resources */,
 				95EF27E71C4A3FAD004654C6 /* UMSCommentInputControlleriPad.xib in Resources */,
@@ -1705,6 +1712,7 @@
 				95EFA9251C51C5C600A10391 /* baak.jpg in Resources */,
 				95E76DE31C57C17300FFBA9E /* NearbyTableViewCell.xib in Resources */,
 				95F06A9C1C57524F00AF25CD /* regetController.xib in Resources */,
+				BE2449011C5B9C7D00D4C35F /* AMapNavi.bundle in Resources */,
 				95EF27881C49DFE2004654C6 /* iconfont-hand.png in Resources */,
 				95EF28191C4B6601004654C6 /* iconfont-fanhui-2.png in Resources */,
 				95E76E081C57C1EB00FFBA9E /* StoryDetailFooterCollectionReusableView.xib in Resources */,

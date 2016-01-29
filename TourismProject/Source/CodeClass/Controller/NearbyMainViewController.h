@@ -9,5 +9,5 @@
 #import "WMPageController.h"
 
 @interface NearbyMainViewController : WMPageController
-
++(instancetype)shareNerbyMainViewController;
 @end

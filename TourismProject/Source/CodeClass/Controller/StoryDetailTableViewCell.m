@@ -18,7 +18,7 @@
     
     _model = model;
     _descripLabel.text = model.text;
-    [self.imgView sd_setImageWithURL:[NSURL URLWithString:model.photo]];
+    [self.imgView yy_setImageWithURL:[NSURL URLWithString:model.photo] options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation];
     
     
 }
@@ -34,7 +34,7 @@
     CGFloat scale  = [self.model.photo_width floatValue]/[self.model.photo_height floatValue];
     
     if (!isnan(scale)) {
-        self.imgView.frame = CGRectMake(kGap, 0, kWidth-2*kGap, (kWidth-2*kGap)*scale);
+        self.imgView.frame = CGRectMake(kGap, 0, kWidth-2*kGap, (kWidth-2*kGap)/scale);
     }
     
     CGRect  rect = [self.model.text boundingRectWithSize:CGSizeMake(kWidth-2*kGap, 10000) options:(NSStringDrawingUsesLineFragmentOrigin) attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17]} context:nil];

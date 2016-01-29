@@ -74,7 +74,7 @@ static NSString * const reuseHeaderViewIndentifier = @"reuseHeaderViewIndentifie
 -(void)location{
 
 
-    NearbyMainViewController * nearby = [[NearbyMainViewController alloc]init];
+    NearbyMainViewController * nearby = [NearbyMainViewController shareNerbyMainViewController];
     [self.navigationController pushViewController:nearby animated:YES];
     
 }
@@ -190,9 +190,13 @@ static NSString * const reuseHeaderViewIndentifier = @"reuseHeaderViewIndentifie
         RecommendCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
         RecommendModel *  model = [[self.dataDict objectForKey:self.keyAarr[indexPath.section]] objectAtIndex:indexPath.item];
         cell.titleLabel.text = model.index_title;
-        [cell.ImgView sd_setImageWithURL:[NSURL URLWithString:model.index_cover]];
+
         cell.userLabel.text = model.user[@"name"];
-        [cell.userImage sd_setImageWithURL:[NSURL URLWithString:model.user[@"avatar_s"]]];
+
+        
+        [cell.ImgView yy_setImageWithURL:[NSURL URLWithString:model.index_cover] options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation];
+        [cell.userImage yy_setImageWithURL:[NSURL URLWithString:model.user[@"avatar_s"]] options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation];
+        
 
         return cell;
     }else {
@@ -202,20 +206,20 @@ static NSString * const reuseHeaderViewIndentifier = @"reuseHeaderViewIndentifie
               travelNoteModel * model = [[self.dataDict objectForKey:self.keyAarr[indexPath.section]] objectAtIndex:indexPath.item];
             url = [NSURL URLWithString:model.cover_image];
             cell.nameLabel.text = model.name;
-           
+           [cell.nameLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:17]];
             cell.first_Day.text = model.first_day;
             cell.popular_place_str.text = model.popular_place_str;
             cell.viewCount.text = [NSString stringWithFormat:@"%@次浏览",model.view_count];
             cell.dayCount.text = [NSString stringWithFormat:@"%@天",model.day_count];
             cell.userName.text = model.user[@"name"];
-            [cell.userImgView sd_setImageWithURL:[NSURL URLWithString:model.user[@"avatar_l"]]];
+            [cell.userImgView yy_setImageWithURL:[NSURL URLWithString:model.user[@"avatar_l"]] options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation];
         }else{
               ProductModel * model = [[self.dataDict objectForKey:self.keyAarr[indexPath.section]] objectAtIndex:indexPath.item];
             url = [NSURL URLWithString:model.cover];
         }
 
-        [cell.imgView sd_setImageWithURL:url];
-        
+
+        [cell.imgView yy_setImageWithURL:url options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation];
         return cell;
     }
 
@@ -229,7 +233,7 @@ static NSString * const reuseHeaderViewIndentifier = @"reuseHeaderViewIndentifie
     }
     else
     {
-        return CGSizeMake(kWidth-kGap, kHeight/3);
+        return CGSizeMake(kWidth-1.5*kGap, kHeight/3);
 
     }
     
@@ -240,7 +244,7 @@ static NSString * const reuseHeaderViewIndentifier = @"reuseHeaderViewIndentifie
     } else if (section==1) {
         return UIEdgeInsetsMake(kGap/2, kWidth*0.05, kGap, kWidth*0.05);
     }else{
-        return UIEdgeInsetsMake(kGap/2, kGap*0.5, kGap, kGap*0.5);
+        return UIEdgeInsetsMake(kGap*.75, kGap*.75, kGap*.75, kGap*.75);
     }
 }
 

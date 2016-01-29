@@ -12,7 +12,9 @@
 -(void)setModel:(TourismModel *)model{
     _model = model;
 
-    [self.imgView sd_setImageWithURL:[NSURL URLWithString:model.photo]];
+  
+    
+   [self.imgView yy_setImageWithURL:[NSURL URLWithString:model.photo] options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation];
     self.detailLabel.text = model.text;
 
 }

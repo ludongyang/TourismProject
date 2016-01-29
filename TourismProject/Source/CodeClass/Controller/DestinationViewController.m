@@ -224,7 +224,19 @@ static NSString *const tableViewCellID = @"tableViewCellIdentifier";
     return CGSizeMake((kWidth-30)/2, (kWidth-30)/2);
 }
 
-
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    DestinationDetailViewController *destinationVC = [[DestinationDetailViewController alloc] init];
+    ElementModel *model = self.elementsArr[indexPath.section];
+    NSArray *dataArr = model.data;
+    DestinationCityModel *cityModel = [DestinationCityModel initWithDictionary:dataArr[indexPath.row]];
+    NSString *str = [cityModel.url substringWithRange:NSMakeRange(8, 7)];
+    destinationVC.urlKeyStr = str;
+    
+    UINavigationController *destinationNC = [[UINavigationController alloc] initWithRootViewController:destinationVC];
+    [self presentViewController:destinationNC animated:YES completion:nil];
+    
+}
 
 #pragma mark----UISearchBarDelegate----------
 -(BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar
@@ -233,6 +245,7 @@ static NSString *const tableViewCellID = @"tableViewCellIdentifier";
     UICollectionViewFlowLayout *flayout = [[UICollectionViewFlowLayout alloc] init];
     SearchCollectionViewController *searchVC = [[SearchCollectionViewController alloc] initWithCollectionViewLayout:flayout];
     UINavigationController * nav= [[UINavigationController alloc]initWithRootViewController:searchVC];
+    nav.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     [self presentViewController:nav animated:YES completion:nil];
     return YES;
 }

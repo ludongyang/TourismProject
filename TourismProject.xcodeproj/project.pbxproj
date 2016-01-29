@@ -308,6 +308,10 @@
 		95F252601C4DE66B00C45CBD /* AccountLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95F2525E1C4DE66B00C45CBD /* AccountLoginViewController.xib */; };
 		95F252621C4E8A8500C45CBD /* backview.png in Resources */ = {isa = PBXBuildFile; fileRef = 95F252611C4E8A8500C45CBD /* backview.png */; };
 		95F252651C4E8E0B00C45CBD /* SetupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F252641C4E8E0B00C45CBD /* SetupTableViewController.m */; };
+		BE2448E81C5AF2B000D4C35F /* DestinationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE2448E71C5AF2B000D4C35F /* DestinationDetailViewController.m */; };
+		BE2448EE1C5AF31C00D4C35F /* ExpandHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = BE2448ED1C5AF31C00D4C35F /* ExpandHeader.m */; };
+		BEDC8FAB1C58F8D70083E1DD /* LabelCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDC8FA91C58F8D70083E1DD /* LabelCollectionViewCell.m */; };
+		BEDC8FAC1C58F8D70083E1DD /* LabelCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEDC8FAA1C58F8D70083E1DD /* LabelCollectionViewCell.xib */; };
 		F03895BBD038B8E08F8AA058 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C367D2A5AD749BFFCA49409 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -854,6 +858,13 @@
 		95F252611C4E8A8500C45CBD /* backview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backview.png; sourceTree = "<group>"; };
 		95F252631C4E8E0B00C45CBD /* SetupTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetupTableViewController.h; sourceTree = "<group>"; };
 		95F252641C4E8E0B00C45CBD /* SetupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetupTableViewController.m; sourceTree = "<group>"; };
+		BE2448E61C5AF2B000D4C35F /* DestinationDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DestinationDetailViewController.h; sourceTree = "<group>"; };
+		BE2448E71C5AF2B000D4C35F /* DestinationDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DestinationDetailViewController.m; sourceTree = "<group>"; };
+		BE2448EC1C5AF31C00D4C35F /* ExpandHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpandHeader.h; sourceTree = "<group>"; };
+		BE2448ED1C5AF31C00D4C35F /* ExpandHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpandHeader.m; sourceTree = "<group>"; };
+		BEDC8FA81C58F8D70083E1DD /* LabelCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelCollectionViewCell.h; sourceTree = "<group>"; };
+		BEDC8FA91C58F8D70083E1DD /* LabelCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelCollectionViewCell.m; sourceTree = "<group>"; };
+		BEDC8FAA1C58F8D70083E1DD /* LabelCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabelCollectionViewCell.xib; sourceTree = "<group>"; };
 		DA2F6A9963A040C1726E7983 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1381,6 +1392,8 @@
 				95E76F9F1C57CC2300FFBA9E /* SearchCollectionViewController.m */,
 				95E76FA01C57CC2300FFBA9E /* SearchResultTableViewController.h */,
 				95E76FA11C57CC2300FFBA9E /* SearchResultTableViewController.m */,
+				BE2448E61C5AF2B000D4C35F /* DestinationDetailViewController.h */,
+				BE2448E71C5AF2B000D4C35F /* DestinationDetailViewController.m */,
 			);
 			name = "New Group";
 			sourceTree = "<group>";
@@ -1635,6 +1648,8 @@
 				95D1FEE11C4CE877004F3A8F /* NSDictionary-DeepMutableCopy.m */,
 				95EE04F11C50F68300350B06 /* TextFieldValidator.h */,
 				95EE04F21C50F68300350B06 /* TextFieldValidator.m */,
+				BE2448EC1C5AF31C00D4C35F /* ExpandHeader.h */,
+				BE2448ED1C5AF31C00D4C35F /* ExpandHeader.m */,
 				95A168F81C51012700088DE8 /* mailValidator */,
 			);
 			path = BaseClass;
@@ -1774,6 +1789,9 @@
 				95E76FC81C57CC7400FFBA9E /* searchUTableViewCell.h */,
 				95E76FC91C57CC7400FFBA9E /* searchUTableViewCell.m */,
 				95E76FCA1C57CC7400FFBA9E /* searchUTableViewCell.xib */,
+				BEDC8FA81C58F8D70083E1DD /* LabelCollectionViewCell.h */,
+				BEDC8FA91C58F8D70083E1DD /* LabelCollectionViewCell.m */,
+				BEDC8FAA1C58F8D70083E1DD /* LabelCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2002,6 +2020,7 @@
 				95D1FEF81C4D2A65004F3A8F /* phonerRegisterController.xib in Resources */,
 				95EF27A41C4A16D3004654C6 /* iconfont-chacha-2.png in Resources */,
 				95EF279F1C49F30C004654C6 /* iconfont-chacha.png in Resources */,
+				BEDC8FAC1C58F8D70083E1DD /* LabelCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2124,6 +2143,7 @@
 				95E76F371C57C34000FFBA9E /* NSLayoutConstraint+PureLayout.m in Sources */,
 				95E76F501C57C34000FFBA9E /* UIScrollView+MJRefresh.m in Sources */,
 				95E76F221C57C34000FFBA9E /* TileOverlayViewController.m in Sources */,
+				BE2448EE1C5AF31C00D4C35F /* ExpandHeader.m in Sources */,
 				95EF9A1D1C5711CA006DEBCD /* SDImageCache.m in Sources */,
 				95E76F321C57C34000FFBA9E /* POIAnnotation.m in Sources */,
 				95E76F771C57C34000FFBA9E /* RoadInterDetailViewController.m in Sources */,
@@ -2212,6 +2232,7 @@
 				95E76F541C57C34000FFBA9E /* TAAbstractDotView.m in Sources */,
 				95F06AA51C57AC7300AF25CD /* ChangePasswordController.m in Sources */,
 				95E76FCB1C57CC7400FFBA9E /* DestinatioinCollectionViewCell.m in Sources */,
+				BE2448E81C5AF2B000D4C35F /* DestinationDetailViewController.m in Sources */,
 				95E76DD81C57C17300FFBA9E /* StoryAllCollectionViewController.m in Sources */,
 				95EF27791C49D38C004654C6 /* FriendController.m in Sources */,
 				95E76F791C57C34000FFBA9E /* SegmentDetailViewController.m in Sources */,
@@ -2223,6 +2244,7 @@
 				95EF9A291C5711CA006DEBCD /* UIImageView+WebCache.m in Sources */,
 				95E76F5B1C57C34000FFBA9E /* BusLineViewController.m in Sources */,
 				95E76F7D1C57C34000FFBA9E /* SubPoiListViewController.m in Sources */,
+				BEDC8FAB1C58F8D70083E1DD /* LabelCollectionViewCell.m in Sources */,
 				95E76FB61C57CC5400FFBA9E /* scorllDataModel.m in Sources */,
 				95E76FA41C57CC2300FFBA9E /* DestinationViewController.m in Sources */,
 				95EF28561C4C83E6004654C6 /* CountryAndAreaCode.m in Sources */,

@@ -7,7 +7,6 @@
 //
 
 #import "SearchCollectionViewController.h"
-
 @interface SearchCollectionViewController () <UISearchResultsUpdating ,UISearchBarDelegate,UICollectionViewDelegateFlowLayout>
 @property(strong,nonatomic) UICollectionViewController *searchResultsController;
 @property(strong,nonatomic) UISearchController *SearchController;
@@ -16,17 +15,30 @@
 @property(strong,nonatomic) NSMutableArray *domainArray;
 @property(strong,nonatomic) NSMutableArray *overSeaArray;
 @property(strong,nonatomic) NSMutableArray *searchArray; //搜索后的数据
+
 @property(strong,nonatomic) UISearchBar *searchBar;
+
 @end
 
-static NSString *const reuseIdentifier2 = @"reuseIdentifier";
+static NSString *const hearderReuseID = @"reuseIdentifier";
+static NSString *const hearderReuseID2 = @"reuseIdentifier2";
+static NSString *const hearderReuseID3 = @"reuseIdentifier3";
 static NSString * const reuseIdentifier = @"Cell";
+static NSString *const reuseIdentifier1 = @"cell1";
+
 @implementation SearchCollectionViewController
 
-
+-(instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
+       
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+   
     self.navigationItem.hidesBackButton  = YES;
     self.navigationController.navigationBar.tintColor = [UIColor redColor];
     
@@ -34,38 +46,40 @@ static NSString * const reuseIdentifier = @"Cell";
     self.searchBar.delegate = self;
     self.searchBar.placeholder= @"搜索";
     [_searchBar setBackgroundColor:[UIColor clearColor]];
-//    [self.searchBar setKeyboardType:UIKeyboardTypeDefault];
+    
+    [self loadSearchController];
+    [self loadData];
+    
+    
     _searchBar.autocorrectionType = UITextAutocorrectionTypeNo;
     _searchBar.autocapitalizationType = UITextAutocapitalizationTypeNone;
     [[[_searchBar.subviews objectAtIndex:0].subviews objectAtIndex:0] removeFromSuperview];
     [self.navigationController.navigationBar addSubview:self.searchBar];
     [self.navigationController.navigationBar setBackgroundColor:[UIColor cyanColor]];
- /*
-//    //导航条的搜索条
-//    _searchBar = [[UISearchBar alloc]initWithFrame:CGRectMake(0.0f,0.0f,240.f,44.0f)];
-//    _searchBar.backgroundColor = [UIColor clearColor];
-//    _searchBar.delegate = self;
-//    [_searchBar setTintColor:[UIColor blackColor]];
-//    [_searchBar setPlaceholder:@"输入艺人名字"];
-//    
-//    //将搜索条放在一个UIView上
-//    UIView *searchView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 240, 44)];
-//    searchView.backgroundColor = [UIColor greenColor];
-//    [searchView addSubview:_searchBar];
-//    searchView.alpha = 0.1;
-//    self.navigationItem.titleView = searchView;
- */
     UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(cancelAction)];
     self.navigationItem.rightBarButtonItem = rightItem;
     
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier2];
+    [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:hearderReuseID];
+    [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:hearderReuseID2];
+    [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:hearderReuseID3];
+    
+    [self.collectionView registerNib:[UINib nibWithNibName:@"LabelCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"labelCollection"];
+
+    NSLog(@"%s",__FUNCTION__);
     
     self.collectionView.backgroundColor = [UIColor whiteColor];
-    [self loadData];
-    [self loadSearchController];
     
 }
+
+-(void) viewWillAppear:(BOOL)animated
+{
+}
+
+-(void)  viewDidAppear:(BOOL)animated
+{
+    [self.collectionView reloadData];
+}
+
 -(void) cancelAction
 {
     [self.searchBar resignFirstResponder];
@@ -77,15 +91,27 @@ static NSString * const reuseIdentifier = @"Cell";
     self.overSeaArray = [NSMutableArray array];
     self.collectionArray = [NSMutableArray array];
     
-    [[SearchDataTools sharePassSearchData] getSearchDomainData:^(NSMutableArray *dataArr) {
-        self.domainArray = dataArr[0];
-        self.overSeaArray = dataArr[1];
-        self.allData = dataArr;
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.collectionView reloadData];
-        });
-    }];
-
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    self.searchArray = [NSMutableArray arrayWithArray:[defaults objectForKey:@"lishi"]];
+    
+    if (self.allData != nil) {
+        self.domainArray = self.allData[0];
+        self.overSeaArray = self.allData[1];
+        [self.collectionView reloadData];
+    }else
+    {
+        [[SearchDataTools sharePassSearchData] getSearchDomainData:^(NSMutableArray *dataArr) {
+            self.domainArray = dataArr[0];
+            self.overSeaArray = dataArr[1];
+            self.allData = dataArr;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                [self.collectionView reloadData];
+            });
+            
+        }];
+    
+    }
 }
 
 -(void) loadSearchController
@@ -107,56 +133,86 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
 
-    return 2;
+    return 3;
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
         if (section == 0) {
+            return self.searchArray.count;
+        }
+        else if (section == 1)
+        {
             return self.domainArray.count;
         }
-        else{
+       else
+        {
             return self.overSeaArray.count;
         }
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-        if (indexPath.section == 0) {
-            UICollectionViewCell *cell1 = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+     LabelCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"labelCollection" forIndexPath:indexPath];
+    if (indexPath.section == 0) {
+        
+         cell.CityLabel.text = self.searchArray[indexPath.row];
+            return cell;
+    }
+    else if (indexPath.section == 1)
+    {
+        
             DestinationCityModel *model = self.domainArray[indexPath.row];
-            NSLog(@"======%@",model.name);
-            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, cell1.frame.size.width+5, cell1.frame.size.height+5)];
-            label.text = model.name;
-            label.textAlignment = NSTextAlignmentCenter;
-            label.layer.cornerRadius = 5;
-            label.layer.masksToBounds = YES;
-            label.layer.borderWidth = 1;
-            label.layer.borderColor = [[UIColor lightGrayColor] CGColor];
-            label.backgroundColor = [UIColor whiteColor];
-            [cell1 addSubview:label];
-            return cell1;
+            cell.CityLabel.text = model.name;
+            return cell;
         }
         else
         {
-            UICollectionViewCell *cell1 = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier2 forIndexPath:indexPath];
+           
             DestinationCityModel *model = self.overSeaArray[indexPath.row];
-            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, cell1.frame.size.width+5, cell1.frame.size.height+5)];
-            label.text = model.name;
-            label.textAlignment = NSTextAlignmentCenter;
-            label.layer.cornerRadius = 5;
-            label.layer.masksToBounds = YES;
-            label.layer.borderWidth = 1;
-            label.layer.borderColor = [[UIColor lightGrayColor] CGColor];
-            label.backgroundColor = [UIColor whiteColor];
-            [cell1 addSubview:label];
-            return cell1;
+            cell.CityLabel.text = model.name;
+            return cell;
         }
 }
+
+
+-(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    
+    if (indexPath.section == 0) {
+        UICollectionReusableView *header = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:hearderReuseID3 forIndexPath:indexPath];
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, kWidth-20, 21)];
+        label.text = @"搜索历史";
+        label.textAlignment = NSTextAlignmentCenter;
+        [header addSubview:label];
+        return header;
+    }
+   else if (indexPath.section == 1)
+   {
+        UICollectionReusableView *header = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:hearderReuseID forIndexPath:indexPath];
+          UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, kWidth-20, 21)];
+        label.text = @"国外热门目的地";
+        label.textAlignment = NSTextAlignmentCenter;
+        [header addSubview:label];
+        return header;
+    }
+  else if (indexPath.section == 2)
+    {
+        UICollectionReusableView *header = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:hearderReuseID2 forIndexPath:indexPath];
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, kWidth-20, 21)];
+        label.text = @"国内热门目的地";
+        label.textAlignment = NSTextAlignmentCenter;
+        [header addSubview:label];
+        return header;
+    }
+    return nil;
+    
+}
+
 
 #pragma mark searchControllerDelegate
 -(void) updateSearchResultsForSearchController:(UISearchController *)searchController
 {
+    /*
     //[self.SearchController.searchBar resignFirstResponder];
     
 //    NSString *filterString = self.SearchController.searchBar.text;
@@ -167,37 +223,65 @@ static NSString * const reuseIdentifier = @"Cell";
 //    
 //    [self.searchArray addObject:filterString];
 //    [self.searchResultsController.collectionView reloadData];
+  */
 }
 
 -(void) searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
     NSLog(@"点击键盘搜索");
+    if (searchBar.text != nil) {
+        if ([self.searchArray containsObject:searchBar.text]) {
+            [self.searchArray removeObject:searchBar.text];
+            [self.searchArray insertObject:searchBar.text atIndex:9];
+        }
+        else
+        {
+            if (self.searchArray.count >=10) {
+                [self.searchArray removeObjectsInRange:NSMakeRange(0, self.searchArray.count-9)];
+                [self.searchArray addObject:searchBar.text];
+            }else
+            {
+                [self.searchArray addObject:searchBar.text];
+            }
+        }
+    }
+    
+     NSLog(@"================%@,%@",searchBar.text,self.searchArray);
+     NSArray *arra = [NSArray arrayWithArray:self.searchArray];
+     self.searchArray = [NSMutableArray arrayWithArray:arra];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:arra forKey:@"lishi"];
+    [defaults synchronize];
+    
     SearchResultTableViewController *searchTVC = [[SearchResultTableViewController alloc] init];
     UINavigationController *unc = [[UINavigationController alloc] initWithRootViewController:searchTVC];
     searchTVC.keyString = searchBar.text;
+    unc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     [self presentViewController:unc animated:YES completion:nil];
     
 }
 
 -(void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-//    if (collectionView == self.searchResultsController.collectionView) {
-//        NSLog(@".........");
-//    }else
-//    {
 
-    //}
-
-    NSLog(@"fasjfdos");
     [self.collectionView deselectItemAtIndexPath:indexPath animated:YES];
     [self.SearchController.searchBar resignFirstResponder];
     
     SearchResultTableViewController *searchTVC = [[SearchResultTableViewController alloc] init];
     UINavigationController *unc = [[UINavigationController alloc] initWithRootViewController:searchTVC];
+    unc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     
     if (indexPath.section == 0) {
+        if (self.searchArray.count !=0) {
+            searchTVC.keyString = self.searchArray[indexPath.row];
+        }
+       
+    }
+    else if (indexPath.section == 1)
+    {
         DestinationCityModel *model = self.domainArray[indexPath.row];
         searchTVC.keyString = model.name;
+
     }
     else
     {
@@ -209,13 +293,21 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 
+
 #pragma mark--------UICollectionViewLayout
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-        if (indexPath.section == 0) {
+    if (indexPath.section == 0) {
+            NSString *str = self.searchArray[indexPath.row];
+            CGRect rect = [str boundingRectWithSize:CGSizeMake(150, 21) options:NSStringDrawingTruncatesLastVisibleLine attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17]} context:nil];
+            return CGSizeMake(rect.size.width, 21);
+    }
+    else if (indexPath.section == 1)
+    {
             DestinationCityModel *model = self.domainArray[indexPath.row];
             CGRect rect = [model.name boundingRectWithSize:CGSizeMake(150, 21) options:NSStringDrawingTruncatesLastVisibleLine attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17]} context:nil];
+        
             return CGSizeMake(rect.size.width, 21);
         }
         else
@@ -224,6 +316,7 @@ static NSString * const reuseIdentifier = @"Cell";
             CGRect rect = [model.name boundingRectWithSize:CGSizeMake(150, 21) options:NSStringDrawingTruncatesLastVisibleLine attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17]} context:nil];
             return CGSizeMake(rect.size.width, 21);
         }
+    
 }
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
     return  UIEdgeInsetsMake(10, 10, 10, 10);
@@ -240,7 +333,6 @@ static NSString * const reuseIdentifier = @"Cell";
 {
     return CGSizeMake(kWidth, 21);
 }     
-
 
 #pragma mark <UICollectionViewDelegate>
 

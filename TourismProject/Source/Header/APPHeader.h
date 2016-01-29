@@ -64,7 +64,7 @@
 #import "scorllDataModel.h"
 #import "DestinationCityModel.h"
 #import "getDestinationTools.h"
-//#import "DestinationDetailViewController.h"
+#import "DestinationDetailViewController.h"
 #import "ExpandHeader.h"
 
 #import "ElementModel.h"

@@ -15,5 +15,6 @@
 #import <AVOSCloud/AVOSCloud.h>
 #import <LeanCloudSocial/AVOSCloudSNS.h>
 #import <LeanCloudSocial/AVUser+SNS.h>
-const static NSString *APIKey = @"abb02896facccc58a0cf9aea2932903a";
+//高德地图key
+const static NSString *APIKey = @"3f5b7e629f76c7b47391e63465bf3391";
 #endif

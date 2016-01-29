@@ -103,11 +103,10 @@ static NSString * const reuseIdentifier = @"Cell";
 
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    return CGSizeMake(kWidth/2.225, kWidth/2);
+   return CGSizeMake(kWidth*.425, kWidth/2);
 }
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
-    
-    return UIEdgeInsetsMake(10, 10, 10, 10);
+    return UIEdgeInsetsMake(kGap/2, kWidth*0.05, kGap, kWidth*0.05);
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
@@ -124,9 +123,14 @@ static NSString * const reuseIdentifier = @"Cell";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     RecommendCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     RecommendModel * model = [self.dataDict objectForKey:self.dataArr[indexPath.item]];
-    [cell.ImgView  sd_setImageWithURL:[NSURL URLWithString:model.index_cover]];
+  
+    [cell.ImgView yy_setImageWithURL:[NSURL URLWithString:model.index_cover]options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation];
+    
     cell.titleLabel.text = model.index_title;
-    [cell.userImage sd_setImageWithURL:[NSURL URLWithString:model.user[@"avatar_s"]]];
+  
+    [cell.userImage yy_setImageWithURL:[NSURL URLWithString:model.user[@"avatar_s"]]options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation];
+    
+    
     cell.userLabel.text = model.user[@"name"];
     return cell;
 }

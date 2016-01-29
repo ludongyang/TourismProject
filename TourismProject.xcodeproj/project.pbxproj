@@ -7,11 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9572F9E31C5B61B1008D1EDE /* MJPopupBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9572F9E01C5B61B1008D1EDE /* MJPopupBackgroundView.m */; };
-		9572F9E41C5B61B1008D1EDE /* UIViewController+MJPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9572F9E21C5B61B1008D1EDE /* UIViewController+MJPopupViewController.m */; };
 		9572F9E91C5B6278008D1EDE /* DateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9572F9E61C5B6278008D1EDE /* DateViewController.m */; };
 		9572F9EA1C5B6278008D1EDE /* SignatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9572F9E81C5B6278008D1EDE /* SignatureViewController.m */; };
 		9572F9ED1C5B62C6008D1EDE /* PlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9572F9EC1C5B62C6008D1EDE /* PlaceholderTextView.m */; };
+		9572F9EF1C5B673A008D1EDE /* AVOSCloudIM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9572F9EE1C5B673A008D1EDE /* AVOSCloudIM.framework */; };
 		95A169031C51012700088DE8 /* NSString+LevenshteinDistance.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A168FA1C51012700088DE8 /* NSString+LevenshteinDistance.m */; };
 		95A169041C51012700088DE8 /* SHAutocorrectSuggestionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A168FC1C51012700088DE8 /* SHAutocorrectSuggestionView.m */; };
 		95A169051C51012700088DE8 /* SHEmailValidationTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A168FE1C51012700088DE8 /* SHEmailValidationTextField.m */; };
@@ -98,8 +97,6 @@
 		95E76F8C1C57C3D500FFBA9E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E76F8B1C57C3D500FFBA9E /* QuartzCore.framework */; };
 		95E76F8E1C57C3DE00FFBA9E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E76F8D1C57C3DE00FFBA9E /* Foundation.framework */; };
 		95E76F901C57C3EB00FFBA9E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E76F8F1C57C3EB00FFBA9E /* CoreLocation.framework */; };
-		95E76F931C57C45600FFBA9E /* AMapSearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E76F911C57C45600FFBA9E /* AMapSearchKit.framework */; };
-		95E76F941C57C45600FFBA9E /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E76F921C57C45600FFBA9E /* MAMapKit.framework */; };
 		95E76F961C57C48800FFBA9E /* AMap.bundle in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E76F951C57C48800FFBA9E /* AMap.bundle */; };
 		95E76F991C57C6DE00FFBA9E /* DataBaseTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E76F981C57C6DE00FFBA9E /* DataBaseTool.m */; };
 		95E76FA41C57CC2300FFBA9E /* DestinationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E76F9B1C57CC2300FFBA9E /* DestinationViewController.m */; };
@@ -252,28 +249,31 @@
 		C276D5EB1C5874C1008DD052 /* YYImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C276D5D61C5874C1008DD052 /* YYImageCache.m */; };
 		C276D5EC1C5874C1008DD052 /* YYWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C276D5D91C5874C1008DD052 /* YYWebImageManager.m */; };
 		C276D5ED1C5874C1008DD052 /* YYWebImageOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C276D5DB1C5874C1008DD052 /* YYWebImageOperation.m */; };
-		C276D5EF1C58992F008DD052 /* AMap.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C276D5EE1C58992F008DD052 /* AMap.bundle */; };
 		C276D64B1C58DE5C008DD052 /* CustomAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = C276D6441C58DE5C008DD052 /* CustomAnnotationView.m */; };
 		C276D64C1C58DE5C008DD052 /* CustomCalloutView.m in Sources */ = {isa = PBXBuildFile; fileRef = C276D6461C58DE5C008DD052 /* CustomCalloutView.m */; };
 		C276D64D1C58DE5C008DD052 /* iconfont-dingwei (1).png in Resources */ = {isa = PBXBuildFile; fileRef = C276D6471C58DE5C008DD052 /* iconfont-dingwei (1).png */; };
 		C276D64E1C58DE5C008DD052 /* iconfont-morentu.png in Resources */ = {isa = PBXBuildFile; fileRef = C276D6481C58DE5C008DD052 /* iconfont-morentu.png */; };
 		C276D64F1C58DE5C008DD052 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C276D64A1C58DE5C008DD052 /* MapViewController.m */; };
+		C29274D01C5B8C2100857AD8 /* AMapLocationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C29274CC1C5B8C2100857AD8 /* AMapLocationKit.framework */; settings = {ASSET_TAGS = (); }; };
+		C29274D11C5B8C2100857AD8 /* AMapNaviKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C29274CD1C5B8C2100857AD8 /* AMapNaviKit.framework */; settings = {ASSET_TAGS = (); }; };
+		C29274D21C5B8C2100857AD8 /* AMapSearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C29274CE1C5B8C2100857AD8 /* AMapSearchKit.framework */; settings = {ASSET_TAGS = (); }; };
+		C29274D31C5B8C2100857AD8 /* iflyMSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C29274CF1C5B8C2100857AD8 /* iflyMSC.framework */; settings = {ASSET_TAGS = (); }; };
+		C29274D91C5B8CF500857AD8 /* MJPopupBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = C29274D61C5B8CF500857AD8 /* MJPopupBackgroundView.m */; settings = {ASSET_TAGS = (); }; };
+		C29274DA1C5B8CF500857AD8 /* UIViewController+MJPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29274D81C5B8CF500857AD8 /* UIViewController+MJPopupViewController.m */; settings = {ASSET_TAGS = (); }; };
+		C29274DC1C5B8D3600857AD8 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C29274DB1C5B8D3600857AD8 /* AddressBook.framework */; };
 		F03895BBD038B8E08F8AA058 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C367D2A5AD749BFFCA49409 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2C367D2A5AD749BFFCA49409 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		53D9849EA7772EFE7C030D7E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		9572F9DF1C5B61B1008D1EDE /* MJPopupBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPopupBackgroundView.h; sourceTree = "<group>"; };
-		9572F9E01C5B61B1008D1EDE /* MJPopupBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPopupBackgroundView.m; sourceTree = "<group>"; };
-		9572F9E11C5B61B1008D1EDE /* UIViewController+MJPopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MJPopupViewController.h"; sourceTree = "<group>"; };
-		9572F9E21C5B61B1008D1EDE /* UIViewController+MJPopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MJPopupViewController.m"; sourceTree = "<group>"; };
 		9572F9E51C5B6278008D1EDE /* DateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateViewController.h; sourceTree = "<group>"; };
 		9572F9E61C5B6278008D1EDE /* DateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateViewController.m; sourceTree = "<group>"; };
 		9572F9E71C5B6278008D1EDE /* SignatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignatureViewController.h; sourceTree = "<group>"; };
 		9572F9E81C5B6278008D1EDE /* SignatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignatureViewController.m; sourceTree = "<group>"; };
 		9572F9EB1C5B62C6008D1EDE /* PlaceholderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceholderTextView.h; sourceTree = "<group>"; };
 		9572F9EC1C5B62C6008D1EDE /* PlaceholderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceholderTextView.m; sourceTree = "<group>"; };
+		9572F9EE1C5B673A008D1EDE /* AVOSCloudIM.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVOSCloudIM.framework; sourceTree = "<group>"; };
 		95A168F91C51012700088DE8 /* NSString+LevenshteinDistance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+LevenshteinDistance.h"; sourceTree = "<group>"; };
 		95A168FA1C51012700088DE8 /* NSString+LevenshteinDistance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+LevenshteinDistance.m"; sourceTree = "<group>"; };
 		95A168FB1C51012700088DE8 /* SHAutocorrectSuggestionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHAutocorrectSuggestionView.h; sourceTree = "<group>"; };
@@ -429,8 +429,6 @@
 		95E76F8B1C57C3D500FFBA9E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		95E76F8D1C57C3DE00FFBA9E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		95E76F8F1C57C3EB00FFBA9E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		95E76F911C57C45600FFBA9E /* AMapSearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapSearchKit.framework; sourceTree = "<group>"; };
-		95E76F921C57C45600FFBA9E /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
 		95E76F951C57C48800FFBA9E /* AMap.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AMap.bundle; path = TourismProject/Source/Framework/MAMapKit.framework/AMap.bundle; sourceTree = "<group>"; };
 		95E76F971C57C6DE00FFBA9E /* DataBaseTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataBaseTool.h; sourceTree = "<group>"; };
 		95E76F981C57C6DE00FFBA9E /* DataBaseTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataBaseTool.m; sourceTree = "<group>"; };
@@ -689,7 +687,6 @@
 		C276D5D91C5874C1008DD052 /* YYWebImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYWebImageManager.m; sourceTree = "<group>"; };
 		C276D5DA1C5874C1008DD052 /* YYWebImageOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYWebImageOperation.h; sourceTree = "<group>"; };
 		C276D5DB1C5874C1008DD052 /* YYWebImageOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYWebImageOperation.m; sourceTree = "<group>"; };
-		C276D5EE1C58992F008DD052 /* AMap.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AMap.bundle; sourceTree = "<group>"; };
 		C276D6431C58DE5C008DD052 /* CustomAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAnnotationView.h; sourceTree = "<group>"; };
 		C276D6441C58DE5C008DD052 /* CustomAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAnnotationView.m; sourceTree = "<group>"; };
 		C276D6451C58DE5C008DD052 /* CustomCalloutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCalloutView.h; sourceTree = "<group>"; };
@@ -698,6 +695,15 @@
 		C276D6481C58DE5C008DD052 /* iconfont-morentu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-morentu.png"; sourceTree = "<group>"; };
 		C276D6491C58DE5C008DD052 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		C276D64A1C58DE5C008DD052 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		C29274CC1C5B8C2100857AD8 /* AMapLocationKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapLocationKit.framework; sourceTree = "<group>"; };
+		C29274CD1C5B8C2100857AD8 /* AMapNaviKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapNaviKit.framework; sourceTree = "<group>"; };
+		C29274CE1C5B8C2100857AD8 /* AMapSearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapSearchKit.framework; sourceTree = "<group>"; };
+		C29274CF1C5B8C2100857AD8 /* iflyMSC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = iflyMSC.framework; sourceTree = "<group>"; };
+		C29274D51C5B8CF500857AD8 /* MJPopupBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPopupBackgroundView.h; sourceTree = "<group>"; };
+		C29274D61C5B8CF500857AD8 /* MJPopupBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPopupBackgroundView.m; sourceTree = "<group>"; };
+		C29274D71C5B8CF500857AD8 /* UIViewController+MJPopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MJPopupViewController.h"; sourceTree = "<group>"; };
+		C29274D81C5B8CF500857AD8 /* UIViewController+MJPopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MJPopupViewController.m"; sourceTree = "<group>"; };
+		C29274DB1C5B8D3600857AD8 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		DA2F6A9963A040C1726E7983 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -706,46 +712,39 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C29274DC1C5B8D3600857AD8 /* AddressBook.framework in Frameworks */,
 				95E76F961C57C48800FFBA9E /* AMap.bundle in Frameworks */,
 				95E76F901C57C3EB00FFBA9E /* CoreLocation.framework in Frameworks */,
 				95E76F8E1C57C3DE00FFBA9E /* Foundation.framework in Frameworks */,
-				95E76F941C57C45600FFBA9E /* MAMapKit.framework in Frameworks */,
 				95E76F8C1C57C3D500FFBA9E /* QuartzCore.framework in Frameworks */,
 				95E76F8A1C57C3B300FFBA9E /* OpenGLES.framework in Frameworks */,
 				95E76F881C57C3A500FFBA9E /* UIKit.framework in Frameworks */,
 				95EF280F1C4A42D6004654C6 /* libz.tbd in Frameworks */,
 				95EF280D1C4A42CD004654C6 /* libstdc++.tbd in Frameworks */,
 				95EF280B1C4A42B8004654C6 /* CoreTelephony.framework in Frameworks */,
-				95E76F931C57C45600FFBA9E /* AMapSearchKit.framework in Frameworks */,
 				95EF28091C4A42AC004654C6 /* libsqlite3.tbd in Frameworks */,
 				95EF28071C4A4295004654C6 /* CoreGraphics.framework in Frameworks */,
 				95EF28051C4A4271004654C6 /* libiconv.tbd in Frameworks */,
 				95EF28031C4A409A004654C6 /* Security.framework in Frameworks */,
 				95EF28011C4A4081004654C6 /* SystemConfiguration.framework in Frameworks */,
+				C29274D11C5B8C2100857AD8 /* AMapNaviKit.framework in Frameworks */,
 				95EF27EF1C4A3FAD004654C6 /* libSocialQQ.a in Frameworks */,
 				95EF27F21C4A3FAD004654C6 /* libSocialWechat.a in Frameworks */,
 				95EF27F31C4A3FAD004654C6 /* libWeChatSDK.a in Frameworks */,
+				C29274D31C5B8C2100857AD8 /* iflyMSC.framework in Frameworks */,
 				95EF27F01C4A3FAD004654C6 /* TencentOpenAPI.framework in Frameworks */,
 				95EF27E41C4A3FAD004654C6 /* libUMSocial_Sdk_4.4.a in Frameworks */,
+				C29274D01C5B8C2100857AD8 /* AMapLocationKit.framework in Frameworks */,
+				C29274D21C5B8C2100857AD8 /* AMapSearchKit.framework in Frameworks */,
 				95EF27EE1C4A3FAD004654C6 /* libSocialSina.a in Frameworks */,
 				F03895BBD038B8E08F8AA058 /* libPods.a in Frameworks */,
+				9572F9EF1C5B673A008D1EDE /* AVOSCloudIM.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9572F9DE1C5B61B1008D1EDE /* PopupVIew */ = {
-			isa = PBXGroup;
-			children = (
-				9572F9DF1C5B61B1008D1EDE /* MJPopupBackgroundView.h */,
-				9572F9E01C5B61B1008D1EDE /* MJPopupBackgroundView.m */,
-				9572F9E11C5B61B1008D1EDE /* UIViewController+MJPopupViewController.h */,
-				9572F9E21C5B61B1008D1EDE /* UIViewController+MJPopupViewController.m */,
-			);
-			path = PopupVIew;
-			sourceTree = "<group>";
-		};
 		95A168F81C51012700088DE8 /* mailValidator */ = {
 			isa = PBXGroup;
 			children = (
@@ -1385,9 +1384,7 @@
 		95EFB8821C492946006CFC9D /* Framework */ = {
 			isa = PBXGroup;
 			children = (
-				C276D5EE1C58992F008DD052 /* AMap.bundle */,
-				95E76F911C57C45600FFBA9E /* AMapSearchKit.framework */,
-				95E76F921C57C45600FFBA9E /* MAMapKit.framework */,
+				C29274CB1C5B8C2100857AD8 /* map */,
 			);
 			path = Framework;
 			sourceTree = "<group>";
@@ -1434,7 +1431,7 @@
 		95EFB8891C492946006CFC9D /* TheThird */ = {
 			isa = PBXGroup;
 			children = (
-				9572F9DE1C5B61B1008D1EDE /* PopupVIew */,
+				C29274D41C5B8CF500857AD8 /* PopupVIew */,
 				C276D6421C58DE5C008DD052 /* mapViewControl */,
 				C276D5B31C5874C1008DD052 /* YYWebImage */,
 				95E76E091C57C34000FFBA9E /* FDSlideBar */,
@@ -1450,6 +1447,7 @@
 		95F252571C4DDD8700C45CBD /* AVOCloud */ = {
 			isa = PBXGroup;
 			children = (
+				9572F9EE1C5B673A008D1EDE /* AVOSCloudIM.framework */,
 			);
 			path = AVOCloud;
 			sourceTree = "<group>";
@@ -1457,6 +1455,7 @@
 		A95CFE43BA2981DD7E80151C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C29274DB1C5B8D3600857AD8 /* AddressBook.framework */,
 				95E76F951C57C48800FFBA9E /* AMap.bundle */,
 				95E76F8F1C57C3EB00FFBA9E /* CoreLocation.framework */,
 				95E76F8D1C57C3DE00FFBA9E /* Foundation.framework */,
@@ -1551,6 +1550,28 @@
 				C2106F221C59F4CF00B45792 /* CustomAnnotation.m */,
 			);
 			path = mapViewControl;
+			sourceTree = "<group>";
+		};
+		C29274CB1C5B8C2100857AD8 /* map */ = {
+			isa = PBXGroup;
+			children = (
+				C29274CC1C5B8C2100857AD8 /* AMapLocationKit.framework */,
+				C29274CD1C5B8C2100857AD8 /* AMapNaviKit.framework */,
+				C29274CE1C5B8C2100857AD8 /* AMapSearchKit.framework */,
+				C29274CF1C5B8C2100857AD8 /* iflyMSC.framework */,
+			);
+			path = map;
+			sourceTree = "<group>";
+		};
+		C29274D41C5B8CF500857AD8 /* PopupVIew */ = {
+			isa = PBXGroup;
+			children = (
+				C29274D51C5B8CF500857AD8 /* MJPopupBackgroundView.h */,
+				C29274D61C5B8CF500857AD8 /* MJPopupBackgroundView.m */,
+				C29274D71C5B8CF500857AD8 /* UIViewController+MJPopupViewController.h */,
+				C29274D81C5B8CF500857AD8 /* UIViewController+MJPopupViewController.m */,
+			);
+			path = PopupVIew;
 			sourceTree = "<group>";
 		};
 		FB828C4C004BB4178A5AA305 /* Pods */ = {
@@ -1686,7 +1707,6 @@
 				95F06A9C1C57524F00AF25CD /* regetController.xib in Resources */,
 				95EF27881C49DFE2004654C6 /* iconfont-hand.png in Resources */,
 				95EF28191C4B6601004654C6 /* iconfont-fanhui-2.png in Resources */,
-				C276D5EF1C58992F008DD052 /* AMap.bundle in Resources */,
 				95E76E081C57C1EB00FFBA9E /* StoryDetailFooterCollectionReusableView.xib in Resources */,
 				95EFB86D1C4928B6006CFC9D /* Main.storyboard in Resources */,
 				95E76FD31C57CC7400FFBA9E /* searchUTableViewCell.xib in Resources */,
@@ -1773,6 +1793,7 @@
 				95E76F471C57C34000FFBA9E /* MJRefreshBackGifFooter.m in Sources */,
 				95E76FB81C57CC5400FFBA9E /* ElementModel.m in Sources */,
 				95E76F4B1C57C34000FFBA9E /* MJRefreshNormalHeader.m in Sources */,
+				C29274DA1C5B8CF500857AD8 /* UIViewController+MJPopupViewController.m in Sources */,
 				95EF9A281C5711CA006DEBCD /* UIImageView+HighlightedWebCache.m in Sources */,
 				C276D5EB1C5874C1008DD052 /* YYImageCache.m in Sources */,
 				95E76DDC1C57C17300FFBA9E /* TourismTableViewCell.m in Sources */,
@@ -1836,10 +1857,10 @@
 				C276D5DC1C5874C1008DD052 /* YYCache.m in Sources */,
 				95E76DFE1C57C1D600FFBA9E /* NearByModel.m in Sources */,
 				95EFB88A1C492946006CFC9D /* AppDelegate.m in Sources */,
+				C29274D91C5B8CF500857AD8 /* MJPopupBackgroundView.m in Sources */,
 				95E76F3F1C57C34000FFBA9E /* MJRefreshAutoFooter.m in Sources */,
 				95E76F811C57C34000FFBA9E /* WMFooldView.m in Sources */,
 				95AA92421C53102D00A77297 /* infoOneCell.m in Sources */,
-				9572F9E31C5B61B1008D1EDE /* MJPopupBackgroundView.m in Sources */,
 				95AA92391C52659400A77297 /* PersonalInformationController.m in Sources */,
 				95E76DDE1C57C17300FFBA9E /* ProductWebView.m in Sources */,
 				95E76DFB1C57C1D600FFBA9E /* ProductModel.m in Sources */,
@@ -1858,7 +1879,6 @@
 				95E76DFA1C57C1D600FFBA9E /* StoryDetailModel.m in Sources */,
 				95E76DDA1C57C17300FFBA9E /* StoryDetailTableViewCell.m in Sources */,
 				95EF9A2A1C5711CA006DEBCD /* UIView+WebCacheOperation.m in Sources */,
-				9572F9E41C5B61B1008D1EDE /* UIViewController+MJPopupViewController.m in Sources */,
 				95E76FA51C57CC2300FFBA9E /* MoreCityCollectionViewController.m in Sources */,
 				95E76FDE1C57CCC400FFBA9E /* SearchDataTools.m in Sources */,
 				95E76F111C57C34000FFBA9E /* FDSlideBar.m in Sources */,
@@ -2036,6 +2056,7 @@
 					"$(PROJECT_DIR)/TourismProject/umeng_ios_social_sdk_4.4_arm64_custom/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 					"$(PROJECT_DIR)/TourismProject/AVOCloud",
 					"$(PROJECT_DIR)/TourismProject/Source/Framework",
+					"$(PROJECT_DIR)/TourismProject/Source/Framework/map",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/TourismProject/Source/Header/PrefixHeader.pch";
 				INFOPLIST_FILE = TourismProject/Info.plist;
@@ -2071,6 +2092,7 @@
 					"$(PROJECT_DIR)/TourismProject/umeng_ios_social_sdk_4.4_arm64_custom/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 					"$(PROJECT_DIR)/TourismProject/AVOCloud",
 					"$(PROJECT_DIR)/TourismProject/Source/Framework",
+					"$(PROJECT_DIR)/TourismProject/Source/Framework/map",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/TourismProject/Source/Header/PrefixHeader.pch";
 				INFOPLIST_FILE = TourismProject/Info.plist;

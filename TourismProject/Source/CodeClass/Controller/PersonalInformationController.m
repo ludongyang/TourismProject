@@ -14,7 +14,7 @@
 #import "DateViewController.h"
 #import "PersonalInformationController.h"
 #import "SignatureViewController.h"
-
+#import "GenderController.h"
 #import "UIViewController+MJPopupViewController.h"
 
 @interface PersonalInformationController ()<genderDelegate,DateDelegate>

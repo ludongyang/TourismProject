@@ -12,6 +12,7 @@
 		9572F9E91C5B6278008D1EDE /* DateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9572F9E61C5B6278008D1EDE /* DateViewController.m */; };
 		9572F9EA1C5B6278008D1EDE /* SignatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9572F9E81C5B6278008D1EDE /* SignatureViewController.m */; };
 		9572F9ED1C5B62C6008D1EDE /* PlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9572F9EC1C5B62C6008D1EDE /* PlaceholderTextView.m */; };
+		9572F9EF1C5B673A008D1EDE /* AVOSCloudIM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9572F9EE1C5B673A008D1EDE /* AVOSCloudIM.framework */; };
 		95A169031C51012700088DE8 /* NSString+LevenshteinDistance.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A168FA1C51012700088DE8 /* NSString+LevenshteinDistance.m */; };
 		95A169041C51012700088DE8 /* SHAutocorrectSuggestionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A168FC1C51012700088DE8 /* SHAutocorrectSuggestionView.m */; };
 		95A169051C51012700088DE8 /* SHEmailValidationTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A168FE1C51012700088DE8 /* SHEmailValidationTextField.m */; };
@@ -270,6 +271,7 @@
 		9572F9E81C5B6278008D1EDE /* SignatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignatureViewController.m; sourceTree = "<group>"; };
 		9572F9EB1C5B62C6008D1EDE /* PlaceholderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceholderTextView.h; sourceTree = "<group>"; };
 		9572F9EC1C5B62C6008D1EDE /* PlaceholderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceholderTextView.m; sourceTree = "<group>"; };
+		9572F9EE1C5B673A008D1EDE /* AVOSCloudIM.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVOSCloudIM.framework; sourceTree = "<group>"; };
 		95A168F91C51012700088DE8 /* NSString+LevenshteinDistance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+LevenshteinDistance.h"; sourceTree = "<group>"; };
 		95A168FA1C51012700088DE8 /* NSString+LevenshteinDistance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+LevenshteinDistance.m"; sourceTree = "<group>"; };
 		95A168FB1C51012700088DE8 /* SHAutocorrectSuggestionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHAutocorrectSuggestionView.h; sourceTree = "<group>"; };
@@ -718,6 +720,7 @@
 				95EF27E41C4A3FAD004654C6 /* libUMSocial_Sdk_4.4.a in Frameworks */,
 				95EF27EE1C4A3FAD004654C6 /* libSocialSina.a in Frameworks */,
 				F03895BBD038B8E08F8AA058 /* libPods.a in Frameworks */,
+				9572F9EF1C5B673A008D1EDE /* AVOSCloudIM.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1432,6 +1435,7 @@
 		95F252571C4DDD8700C45CBD /* AVOCloud */ = {
 			isa = PBXGroup;
 			children = (
+				9572F9EE1C5B673A008D1EDE /* AVOSCloudIM.framework */,
 			);
 			path = AVOCloud;
 			sourceTree = "<group>";

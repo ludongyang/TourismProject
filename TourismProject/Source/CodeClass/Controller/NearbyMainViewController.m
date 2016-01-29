@@ -73,7 +73,7 @@
         _regeo.requireExtension = YES;
         
         __block NearbyMainViewController * main = self;
-        [_shareMap startLocate];
+
         _shareMap.mapBlock= ^(CLLocation* location){
             main.location = location;
             NearbyTableViewController * nearByCurrent = (NearbyTableViewController*)main.currentViewController;

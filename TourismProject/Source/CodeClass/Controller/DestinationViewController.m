@@ -38,10 +38,7 @@ static NSString *const destinationReuseID = @"destinationCollectionReuseIdentifi
 static NSString *const tableViewCellID = @"tableViewCellIdentifier";
 
 @implementation DestinationViewController
--(void)viewDidAppear:(BOOL)animated
-{
-    [[NSUserDefaults standardUserDefaults] setValue:@(self.tabBarController.selectedIndex) forKey:@"selectedIndex"];
-}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.dataDict = [NSMutableDictionary new];

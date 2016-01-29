@@ -40,10 +40,6 @@ static NSString * const reuseHeaderViewIndentifier = @"reuseHeaderViewIndentifie
         _dataDict = [NSMutableDictionary new];
     }return _dataDict;
 }
--(void)viewDidAppear:(BOOL)animated
-{
-    [[NSUserDefaults standardUserDefaults] setValue:@(self.tabBarController.selectedIndex) forKey:@"selectedIndex"];
-}
 - (void)viewDidLoad {
     [super viewDidLoad];
     UINib * nib = [UINib nibWithNibName:@"RecommendCollectionViewCell" bundle:nil];

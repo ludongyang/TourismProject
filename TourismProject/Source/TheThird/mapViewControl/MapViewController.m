@@ -36,6 +36,19 @@
     });return map;
     
 }
+
+
+-(instancetype)init{
+    if (self = [super init]) {
+        _mapView = [[MAMapView alloc]init];
+        _mapView.delegate = self;
+        //定位
+        _mapView.showsUserLocation = YES;
+        [_mapView.userLocation addObserver:self forKeyPath:@"location" options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld) context:nil];
+        
+    }return self;
+    
+}
 -(NSMutableSet *)anninationSet{
     if (!_anninationSet) {
         _anninationSet = [NSMutableSet new];
@@ -108,17 +121,6 @@
 }
 
 
--(instancetype)init{
-    if (self = [super init]) {
-        _mapView = [[MAMapView alloc]init];
-        _mapView.delegate = self;
-        //定位
-        _mapView.showsUserLocation = YES;
-        [_mapView.userLocation addObserver:self forKeyPath:@"location" options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld) context:nil];
-        
-    }return self;
-
-}
 //开启定位
 -(void)startLocate{
     _mapView.showsUserLocation = YES;

@@ -8,20 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@class GenderController;
-
-
-@protocol genderDelegate <NSObject>
-- (void)selectGender:(BOOL)gender;
-@end
-
-
-typedef void(^passvalue)(NSString * string);
 @interface GenderController : UIViewController
-
-@property (nonatomic,weak)id<genderDelegate>delegate;
-@property (nonatomic,strong)passvalue ps;
-
-+ (instancetype)share;
 
 @end

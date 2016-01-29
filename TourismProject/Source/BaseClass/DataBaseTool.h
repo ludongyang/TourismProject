@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <MAMapKit/MAMapKit.h>
+
 typedef void(^Block)(NSDictionary * dict);
 @interface DataBaseTool : NSObject
 

@@ -11,6 +11,7 @@
 #import "LoginViewController.h"
 #import <AVOSCloud/AVOSCloud.h>
 #import "SetupTableViewController.h"
+
 #define kWidth [UIScreen mainScreen].bounds.size.width
 #define kHeight [UIScreen mainScreen].bounds.size.height
 #define kGap 40
@@ -23,7 +24,6 @@
 @property (nonatomic,strong)UIButton * setButton;
 @property (nonatomic,strong)UIButton * photoButton;
 @property (nonatomic,strong)UIImageView * headPhotoImgview;
-@property (nonatomic,strong)UILabel * signaturelb;
 
 
 @end
@@ -32,6 +32,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self p_setupView];
     
 }
 
@@ -39,9 +40,6 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     
-    
-    
-   [self p_setupView];
     AVUser * curUser = [AVUser currentUser];
     
     if (curUser !=  nil){
@@ -56,8 +54,6 @@
     }];
     
     }
-    self.signaturelb.text = [[AVUser currentUser] objectForKey:@"signature"];
-    
 }
 - (void)p_setupView{
     self.scrollView = [[UIScrollView alloc] init];
@@ -72,7 +68,7 @@
     
     self.backgroundView.frame = CGRectMake(0, 0, self.scrollView.frame.size.width, 270);
     
-    self.backgroundView.backgroundColor = [UIColor cyanColor];
+    self.backgroundView.backgroundColor = [UIColor redColor];
     self.backgroundView.userInteractionEnabled = YES;
     [self.scrollView addSubview:self.backgroundView];
     
@@ -103,23 +99,15 @@
     self.headPhotoImgview = [[UIImageView alloc] init];
     self.headPhotoImgview.frame = CGRectMake(0, 0, 100,100);
     self.headPhotoImgview.center = self.backgroundView.center;
+    self.headPhotoImgview.backgroundColor = [UIColor greenColor];
     self.headPhotoImgview.layer.masksToBounds = YES;
     self.headPhotoImgview.layer.cornerRadius = 50;
     self.headPhotoImgview.userInteractionEnabled = YES;
     [self.scrollView addSubview:self.headPhotoImgview];
-    
-    self.signaturelb = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.headPhotoImgview.frame)+10, CGRectGetWidth(self.headPhotoImgview.frame)*2, 60)];
-    self.signaturelb.numberOfLines = 0;
-    self.signaturelb.center = CGPointMake(self.backgroundView.frame.size.width/2,self.backgroundView.frame.size.height -50);
-    self.signaturelb.textAlignment = NSTextAlignmentCenter;
-//    self.signaturelb.backgroundColor = [UIColor redColor];
-    [self.scrollView addSubview:self.signaturelb];
     //    头像添加点击手势
-        UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(headPhotoTap:)];
+    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(headPhotoTap:)];
     [self.headPhotoImgview addGestureRecognizer:tap];
     
-    
-
     
 }
 //点击头像设置个人信息
@@ -200,8 +188,6 @@
 
 -(void)viewDidAppear:(BOOL)animated
 {
-   
-
     __block NSUInteger index = [[[NSUserDefaults standardUserDefaults] valueForKey:@"selectedIndex"] integerValue];
     
     AVUser * curUser = [AVUser currentUser];

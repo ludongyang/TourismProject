@@ -11,6 +11,7 @@
 #import <AMapSearchKit/AMapSearchKit.h>
 @interface NearbyTableViewController : UITableViewController
 @property (strong, nonatomic) NSMutableDictionary *dataDict;
+@property(nonatomic,strong) NSMutableArray * keyArray;
 @property (strong, nonatomic) NSNumber * category;
 @property(nonatomic,strong) CLLocation * location;
 -(void)getDataWithCategory;

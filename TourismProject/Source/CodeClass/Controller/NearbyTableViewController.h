@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <MAMapKit/MAMapKit.h>
-#import <AMapSearchKit/AMapSearchKit.h>
+
+
 @interface NearbyTableViewController : UITableViewController
 @property (strong, nonatomic) NSMutableDictionary *dataDict;
 @property(nonatomic,strong) NSMutableArray * keyArray;

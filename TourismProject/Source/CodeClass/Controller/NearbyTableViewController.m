@@ -10,7 +10,7 @@
 
 @interface NearbyTableViewController ()
 @property(nonatomic,strong)DataBaseTool * tool;
-@property(nonatomic,strong)MAMapView * mapView;
+//@property(nonatomic,strong)MAMapView * mapView;
 @property(nonatomic,assign)NSUInteger dataIndex;
 
 

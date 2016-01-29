@@ -1,63 +1,174 @@
 //
 //  MapViewController.m
-//  ditu
+//  项目高德导航
 //
-//  Created by lanou3g on 16/1/27.
+//  Created by lanou3g on 16/1/29.
 //  Copyright © 2016年 王欣. All rights reserved.
 //
 
 #import "MapViewController.h"
-
-#import "CustomAnnotationView.h"
 #import "CustomAnnotation.h"
-
-
-@interface MapViewController ()<MAMapViewDelegate>
-@property(nonatomic,strong)MAMapView * mapView;
-@property(nonatomic,strong)UISegmentedControl * showSegment;
-@property(nonatomic,strong)UISegmentedControl * modeSegment;
+#import "CustomAnnotationView.h"
+#import "CustomCalloutView.h"
+@interface MapViewController ()<AMapNaviViewControllerDelegate,AMapLocationManagerDelegate,AMapNaviManagerDelegate,MAMapViewDelegate>
+@property(nonatomic,strong)AMapLocationManager * manager;
 @property(nonatomic,strong)UIButton * locatButton;
 @property(nonatomic,strong)UIButton * showButton;
+@property (nonatomic, strong) AMapNaviManager *naviManager;
+@property (nonatomic, strong) AMapNaviViewController *naviViewController;
+@property (nonatomic, strong) MAMapView *mapView;
 
-//@property(nonatomic,strong)
-//标注数组
-@property (nonatomic, strong) NSMutableArray *annotations;
 
 @end
-
+BOOL buttonBool = NO;
 @implementation MapViewController
-+(instancetype)shareMapViewController{
-    static MapViewController * map = nil;
+
+
++(instancetype)shareMapManagerControl{
+    static    MapViewController * mapViewControl = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        if (!map) {
-            map = [[MapViewController alloc]init];
+        if (!mapViewControl) {
+            mapViewControl = [[MapViewController alloc]init];
         }
-    });return map;
-    
+    });return mapViewControl;
 }
-
-
--(instancetype)init{
-    if (self = [super init]) {
-        _mapView = [[MAMapView alloc]init];
+-(MAMapView *)mapView{
+    if (!_mapView) {
+        _mapView = [[MAMapView alloc]initWithFrame:self.view.bounds];
         _mapView.delegate = self;
-        //定位
-        _mapView.showsUserLocation = YES;
-        [_mapView.userLocation addObserver:self forKeyPath:@"location" options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld) context:nil];
-        
-    }return self;
+    }return _mapView;
+}
+-(AMapLocationManager *)manager{
+    if (!_manager) {
+        _manager = [[AMapLocationManager alloc]init];
+        _manager.delegate = self;
+    }return _manager;
+}
+- (void)initNaviManager
+{
+    if (_naviManager == nil)
+    {
+        _naviManager = [[AMapNaviManager alloc] init];
+        [_naviManager setDelegate:self];
+    }
+}
+
+- (void)initNaviViewController
+{
+    if (_naviViewController == nil)
+    {
+        _naviViewController = [[AMapNaviViewController alloc] initWithDelegate:self];
+    }
+}
+// 规划路线
+- (void)routeCalWithStartPoint:(AMapNaviPoint*)startPint AndEndPoint:(AMapNaviPoint*)endPoint
+{
+    //    AMapNaviPoint *startPoint = [AMapNaviPoint locationWithLatitude:39.989614 longitude:116.481763];
+    //    AMapNaviPoint *endPoint = [AMapNaviPoint locationWithLatitude:39.983456 longitude:116.315495];
+    
+    //导航的时候创建导航视图
+    [self initNaviManager];
+    [self initNaviViewController];
+    NSArray *startPoints = @[startPint];
+    NSArray *endPoints   = @[endPoint];
+    
+    //驾车路径规划（未设置途经点、导航策略为速度优先）
+    [_naviManager calculateDriveRouteWithStartPoints:startPoints endPoints:endPoints wayPoints:nil drivingStrategy:0];
+    
+    //步行路径规划
+    [self.naviManager calculateWalkRouteWithStartPoints:startPoints endPoints:endPoints];
+}
+
+// !!!:路径规划成功的回调函数
+- (void)naviManagerOnCalculateRouteSuccess:(AMapNaviManager *)naviManager
+{
+    
+    //导航视图展示
+    [_naviManager presentNaviViewController:_naviViewController animated:YES];
+}
+
+// !!!:导航视图被展示出来的回调函数
+- (void)naviManager:(AMapNaviManager *)naviManager didPresentNaviViewController:(UIViewController *)naviViewController
+{
+    
+    
+    //调用startGPSNavi方法进行实时导航，调用startEmulatorNavi方法进行模拟导航
+    [_naviManager startEmulatorNavi];
+    //    [_naviManager startGPSNavi];
+}
+
+- (void)naviViewControllerCloseButtonClicked:(AMapNaviViewController *)naviViewController
+{
+    
+    
+    [self.naviManager stopNavi];
+    
+    [self.naviManager dismissNaviViewControllerAnimated:YES];
+}
+
+// 处理位置更新
+-(void)amapLocationManager:(AMapLocationManager *)manager didUpdateLocation:(CLLocation *)location{
+    NSLog(@"处理位置更新%@",location);
+}
+/**
+ *  定位权限状态改变时回调函数
+ *
+ *  @param manager 定位 AMapLocationManager 类。
+ *  @param status 定位权限状态。
+ */
+- (void)amapLocationManager:(AMapLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status{
+    
+    NSLog(@"定位权限改变回调函数%d",status);
     
 }
--(NSMutableSet *)anninationSet{
-    if (!_anninationSet) {
-        _anninationSet = [NSMutableSet new];
-    }return _anninationSet;
+
+/**
+ *  开始定位,定位结束后将数据出传出去
+ *
+ *  @param CLLocationAccuracy 定位精度
+ *  @param mapBlock           如果定位结束传出去的定位数据(逆地理信息)
+ */
+-(void)startLocationWithAccuracy:(CLLocationAccuracy)CLLocationAccuracy MapBlock:(MapBlock)mapBlock{
+    
+    //定位精度
+    [self.manager setDesiredAccuracy:CLLocationAccuracy];
+    
+    //定位结束后调用
+    [self.manager requestLocationWithReGeocode:YES completionBlock:^(CLLocation *location, AMapLocationReGeocode *regeocode, NSError *error) {
+        
+        mapBlock(location,regeocode,error);
+        
+    }];
 }
--(NSMutableArray *)annotations{
-    if (!_annotations) {
-        _annotations = [NSMutableArray new];
-    }return _annotations;
+
+
+// !!!:mapView的代理方法
+-(MAAnnotationView*)mapView:(MAMapView *)mapView viewForAnnotation:(id<MAAnnotation>)annotation{
+    
+    if ([annotation isKindOfClass:[MAPointAnnotation class]])
+    {
+        static NSString *customReuseIndetifier = @"customReuseIndetifier";
+        
+        CustomAnnotationView *annotationView = (CustomAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:customReuseIndetifier];
+        
+        if (annotationView == nil)
+        {
+            annotationView = [[CustomAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:customReuseIndetifier];
+            annotationView.canShowCallout = NO;
+            annotationView.draggable = YES;
+            annotationView.calloutOffset = CGPointMake(0, -5);
+        }
+        CustomAnnotation * an = (CustomAnnotation*)annotation;
+        annotationView.name = an.title;
+        //下载图片
+        //        [annotationView.portraitImageView sd_setImageWithURL:[NSURL URLWithString:an.imageUrlString]];
+        
+        NSLog(@"%@",annotation);
+        return annotationView;
+    }
+    
+    return nil;
 }
 -(void)viewWillAppear:(BOOL)animated{
     
@@ -74,126 +185,57 @@
     [self.view bringSubviewToFront:_locatButton];
     
 }
--(void)showBussiness:(UIButton*)sender{
-    [self addAnnotations:self.anninationSet];
-}
--(void)toMyLocation:(UIButton*)sender{
-    if (_mapView.showsUserLocation==NO) {
-        _mapView.showsUserLocation = YES;
-    }
-    
-    [UIView animateWithDuration:.5
-                     animations:^{
-                         sender.transform = CGAffineTransformScale(sender.transform, 0.8, 0.8);
-                       
-                     } completion:^(BOOL finished) {
-                         sender.transform = CGAffineTransformScale(sender.transform, 1.25, 1.25);
-                     }];
-    [_mapView setUserTrackingMode:MAUserTrackingModeFollow animated:YES];
 
-}
-
-
-- (MAAnnotationView *)mapView:(MAMapView *)mapView viewForAnnotation:(id<MAAnnotation>)annotation
-{
-    if ([annotation isKindOfClass:[MAPointAnnotation class]])
-    {
-        static NSString *customReuseIndetifier = @"customReuseIndetifier";
-        
-        CustomAnnotationView *annotationView = (CustomAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:customReuseIndetifier];
-        
-        if (annotationView == nil)
-        {
-            annotationView = [[CustomAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:customReuseIndetifier];
-            annotationView.canShowCallout = NO;
-            annotationView.draggable = YES;
-            annotationView.calloutOffset = CGPointMake(0, -5);
-        }
-        CustomAnnotation * an = (CustomAnnotation*)annotation;
-        annotationView.name = an.title;
-        [annotationView.portraitImageView sd_setImageWithURL:[NSURL URLWithString:an.imageUrlString]];
-
-        NSLog(@"%@",annotation);
-        return annotationView;
-    }
-    
-    return nil;
-}
-
-
-//开启定位
--(void)startLocate{
-    _mapView.showsUserLocation = YES;
-}
-// !!!:待做
--(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
-    if ([keyPath isEqualToString:@"location"]) {
-        
-        CLLocation * locat = (CLLocation*)change[@"new"];
-        NSLog(@"定位成功 %@",locat);
-        self.mapBlock(locat);
-        self.mapView.showsUserLocation = NO;
-    }
-}
-// !!!:待做
+// !!!:添加标注
 -(void)addAnnotations:(NSSet *)objects{
     // :!!!遍历集合里面元素添加到地图
-   
-    
-    for (NearByModel * modl in objects) {
-         CustomAnnotation *annotation = [[CustomAnnotation alloc] init];
-        CLLocation * location = [[CLLocation alloc]initWithLatitude:[modl.location[@"lat"]doubleValue] longitude:[modl.location[@"lng"]doubleValue]];
+    if (buttonBool==NO) {
+        for (NearByModel * modl in objects) {
+            CustomAnnotation *annotation = [[CustomAnnotation alloc] init];
+            CLLocation * location = [[CLLocation alloc]initWithLatitude:[modl.location[@"lat"]doubleValue] longitude:[modl.location[@"lng"]doubleValue]];
+            
+            annotation.coordinate = location.coordinate;
+            annotation.title    = modl.name;
+            annotation.subtitle = @"CustomAnnotationView";
+            annotation.imageUrlString = modl.cover;
+            
+            [self.mapView addAnnotation:annotation];
+            NSLog(@"%@",modl.name);
+        }
+        buttonBool = YES;
+    }else{
+        [self.mapView removeAnnotations:self.mapView.annotations];
         
-        annotation.coordinate = location.coordinate;
-        annotation.title    = modl.name;
-        annotation.subtitle = @"CustomAnnotationView";
-        annotation.imageUrlString = modl.cover;
-    
-        [self.mapView addAnnotation:annotation];
-        NSLog(@"%@",modl.name);
+        
     }
-
+    
+  
+    
 }
+
+
 //清除地图信息
 -(void)clearMapView{
     
     self.mapView.showsUserLocation = NO;
     [self.mapView removeAnnotations:self.mapView.annotations];
     self.mapView.delegate =nil;
+    self.manager.delegate = nil;
     
     
-}
--(void)dealloc{
-    [self.mapView.userLocation removeObserver:self forKeyPath:@"location"];
 }
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
-    self.navigationItem.title = @"地图";
-   
+    [self.view addSubview:self.mapView];
     _mapView.showsCompass = YES;
-    _mapView.showsScale = YES;
-    _mapView.frame = self.view.bounds;
-    _mapView.userTrackingMode = MAUserTrackingModeFollow;
-    [self.view addSubview:_mapView];
-  
-    // Do any additional setup after loading the view.
-}
--(void)mapView:(MAMapView *)mapView didChangeUserTrackingMode:(MAUserTrackingMode)mode animated:(BOOL)animated{
+    _mapView.showsUserLocation = YES;
+    _mapView.userTrackingMode = MAUserTrackingModeFollowWithHeading;
     
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end

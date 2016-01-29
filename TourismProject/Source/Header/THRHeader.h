@@ -15,5 +15,10 @@
 #import "MJRefresh.h"
 #import "YYWebImage.h"
 #import "FDSlideBar.h"
+#import <AMapNaviKit/AMapNaviKit.h>
+#import <AMapNaviKit/MAMapServices.h>
+#import <AMapLocationKit/AMapLocationKit.h>
+#import <AMapNaviKit/MAMapKit.h>
+#import <AMapSearchKit/AMapSearchKit.h>
 //#import "MapViewController.h"
 #endif

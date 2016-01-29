@@ -17,8 +17,10 @@
 
 - (void)configureAPIKey
 {
-    [AMapSearchServices sharedServices].apiKey = (NSString*)APIKey;
+    [AMapNaviServices sharedServices].apiKey = (NSString*)APIKey;
     [MAMapServices sharedServices].apiKey = (NSString *)APIKey;
+    [AMapSearchServices sharedServices].apiKey = (NSString*)APIKey;
+    [AMapLocationServices sharedServices].apiKey = (NSString*)APIKey;
 }
 
 -(BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url{

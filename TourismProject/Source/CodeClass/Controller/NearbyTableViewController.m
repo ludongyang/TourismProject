@@ -8,11 +8,11 @@
 
 #import "NearbyTableViewController.h"
 
-@interface NearbyTableViewController ()<MapViewControllerDelegate>
+@interface NearbyTableViewController ()
 @property(nonatomic,strong)DataBaseTool * tool;
 @property(nonatomic,strong)MAMapView * mapView;
 @property(nonatomic,assign)NSUInteger dataIndex;
-@property(nonatomic,strong)MapViewController * shareMap;
+
 
 @end
 static NSString * const reusedNearByTableCell = @"reusedNearByTableCell";

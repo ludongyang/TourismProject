@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		9572F90A1C58FAC2008D1EDE /* fs_main_login_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 9572F9081C58FAC2008D1EDE /* fs_main_login_normal.png */; };
 		9572F90B1C58FAC2008D1EDE /* fs_main_login_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 9572F9091C58FAC2008D1EDE /* fs_main_login_selected.png */; };
+		9572F9A41C5B0D5B008D1EDE /* PlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9572F9A31C5B0D5B008D1EDE /* PlaceholderTextView.m */; };
+		9572F9D61C5B4974008D1EDE /* SignatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9572F9D51C5B4974008D1EDE /* SignatureViewController.m */; };
 		9583D3391C58AE4200CE5B19 /* MJPopupBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9583D3361C58AE4200CE5B19 /* MJPopupBackgroundView.m */; };
 		9583D33A1C58AE4200CE5B19 /* UIViewController+MJPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9583D3381C58AE4200CE5B19 /* UIViewController+MJPopupViewController.m */; };
 		9583D33E1C58BDD500CE5B19 /* 1234.png in Resources */ = {isa = PBXBuildFile; fileRef = 9583D33D1C58BDD500CE5B19 /* 1234.png */; };
@@ -336,6 +338,10 @@
 		53D9849EA7772EFE7C030D7E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9572F9081C58FAC2008D1EDE /* fs_main_login_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fs_main_login_normal.png; sourceTree = "<group>"; };
 		9572F9091C58FAC2008D1EDE /* fs_main_login_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fs_main_login_selected.png; sourceTree = "<group>"; };
+		9572F9A21C5B0D5B008D1EDE /* PlaceholderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceholderTextView.h; sourceTree = "<group>"; };
+		9572F9A31C5B0D5B008D1EDE /* PlaceholderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceholderTextView.m; sourceTree = "<group>"; };
+		9572F9D41C5B4974008D1EDE /* SignatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignatureViewController.h; sourceTree = "<group>"; };
+		9572F9D51C5B4974008D1EDE /* SignatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignatureViewController.m; sourceTree = "<group>"; };
 		9583D3351C58AE4200CE5B19 /* MJPopupBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPopupBackgroundView.h; sourceTree = "<group>"; };
 		9583D3361C58AE4200CE5B19 /* MJPopupBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPopupBackgroundView.m; sourceTree = "<group>"; };
 		9583D3371C58AE4200CE5B19 /* UIViewController+MJPopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MJPopupViewController.h"; sourceTree = "<group>"; };
@@ -1741,6 +1747,8 @@
 				95EE464A1C56529A00960B2C /* GenderController.m */,
 				9583D33F1C58C92E00CE5B19 /* DateViewController.h */,
 				9583D3401C58C92E00CE5B19 /* DateViewController.m */,
+				9572F9D41C5B4974008D1EDE /* SignatureViewController.h */,
+				9572F9D51C5B4974008D1EDE /* SignatureViewController.m */,
 				95AA92511C53781400A77297 /* headPhotoController.h */,
 				95AA92521C53781400A77297 /* headPhotoController.m */,
 				95F252631C4E8E0B00C45CBD /* SetupTableViewController.h */,
@@ -1813,6 +1821,8 @@
 		95EFB8811C492946006CFC9D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9572F9A21C5B0D5B008D1EDE /* PlaceholderTextView.h */,
+				9572F9A31C5B0D5B008D1EDE /* PlaceholderTextView.m */,
 				95AA923F1C53102D00A77297 /* infoOneCell.h */,
 				95AA92401C53102D00A77297 /* infoOneCell.m */,
 				95AA92411C53102D00A77297 /* infoOneCell.xib */,
@@ -2303,6 +2313,7 @@
 				95E76F461C57C34000FFBA9E /* MJRefreshAutoStateFooter.m in Sources */,
 				95E76F651C57C34000FFBA9E /* NaviShareViewController.m in Sources */,
 				95E76F301C57C34000FFBA9E /* MANaviPolyline.m in Sources */,
+				9572F9A41C5B0D5B008D1EDE /* PlaceholderTextView.m in Sources */,
 				95E76FB91C57CC5400FFBA9E /* placeModel.m in Sources */,
 				95E76F641C57C34000FFBA9E /* LocationShareViewController.m in Sources */,
 				95E76FBA1C57CC5400FFBA9E /* tripModel.m in Sources */,
@@ -2346,6 +2357,7 @@
 				95E76DE11C57C17300FFBA9E /* NearbyTableViewController.m in Sources */,
 				95E76F551C57C34000FFBA9E /* TAAnimatedDotView.m in Sources */,
 				95E76F511C57C34000FFBA9E /* UIView+MJExtension.m in Sources */,
+				9572F9D61C5B4974008D1EDE /* SignatureViewController.m in Sources */,
 				95E76F561C57C34000FFBA9E /* TADotView.m in Sources */,
 				95E76F741C57C34000FFBA9E /* PathDetailViewController.m in Sources */,
 				95E76FDF1C57CCC400FFBA9E /* getSearchData.m in Sources */,

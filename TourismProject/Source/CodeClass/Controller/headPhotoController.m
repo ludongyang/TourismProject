@@ -52,7 +52,7 @@
     self.upload = [UIButton buttonWithType:UIButtonTypeSystem];
     self.upload.frame = CGRectMake(0, 0, 200, 50);
     [self.upload setTitle:@"上传头像" forState:(UIControlStateNormal)];
-    self.upload.backgroundColor = [UIColor redColor];
+    self.upload.backgroundColor = [UIColor cyanColor];
     self.upload.center = CGPointMake(self.view.bounds.size.width/2, self.view.bounds.size.height/2 -60);
     [self.upload addTarget:self action:@selector(uploadAction:) forControlEvents:(UIControlEventTouchUpInside)];
     

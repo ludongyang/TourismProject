@@ -12,7 +12,8 @@
 #import "headPhotoController.h"
 #import "userNameController.h"
 #import "DateViewController.h"
-
+#import "PersonalInformationController.h"
+#import "SignatureViewController.h"
 @interface PersonalInformationController ()<genderDelegate,DateDelegate>
 @property (nonatomic,strong)NSMutableArray * headArray;
 @property (nonatomic,strong)NSMutableArray * nameArray;
@@ -38,9 +39,36 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"infoOneCell" bundle:nil] forCellReuseIdentifier:@"cell1"];
     [self.tableView registerNib:[UINib nibWithNibName:@"infoTwoCell" bundle:nil] forCellReuseIdentifier:@"cell2"];
     
+
+    
+    
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    
+    [super viewWillAppear:animated];
+    
+    infoTwoCell  * cell1= [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:2]];
+       cell1.setLabel.text = [[AVUser currentUser] objectForKey:@"gender"];
+    
+   
+    infoTwoCell * cell2 = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:2]];
+    
+    cell2.setLabel.text = [[AVUser currentUser] objectForKey:@"date"];
+//    
+    infoTwoCell * cell3 = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
+    cell3.setLabel.text = [[AVUser currentUser] objectForKey:@"username"];
+    
+    
+    
+    infoTwoCell * cell4 = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:2]];
+    cell4.setLabel.text = [[AVUser currentUser] objectForKey:@"signature"];
+    
 
+    
+    
+}
 
 - (void)returnAction:(UIBarButtonItem *)sender{
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -99,15 +127,9 @@
         infoTwoCell * cell = [tableView dequeueReusableCellWithIdentifier:@"cell2" forIndexPath:indexPath];
         cell.nameLabel.text = self.numberArray[indexPath.row];
         if (indexPath.row == 1) {
-            
-            
-            [GenderController share].ps = ^(NSString * string){
+        
                 
-                cell.setLabel.text = string;
-                
-            };
-            
-            
+       
         }
         
         
@@ -138,8 +160,6 @@
         [self presentViewController:headNC animated:YES completion:nil];
         
     }else if (indexPath.section == 1){
-        
-        
         userNameController * userVC = [[userNameController alloc] init];
         UINavigationController * userNC = [[UINavigationController alloc] initWithRootViewController:userVC];
         [self presentViewController:userNC animated:YES completion:nil];
@@ -164,7 +184,14 @@
             self.dataVC.delegate = self;
             [self presentPopupViewController:self.dataVC animationType:(MJPopupViewAnimationSlideBottomTop)];
 
-        }else {
+        }else if (indexPath.row == 3){
+           
+            
+          SignatureViewController  * signatureVC = [[SignatureViewController alloc] init];
+            
+            UINavigationController * signaNC = [[UINavigationController alloc] initWithRootViewController:signatureVC];
+            
+            [self presentViewController:signaNC animated:YES completion:nil];
             
         }
     }
@@ -177,6 +204,8 @@
     infoTwoCell  * cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:2]];
     cell.setLabel.text = gender == 1 ?@"男":@"女";
     [ [AVUser currentUser] setObject:cell.setLabel.text forKey:@"gender"];
+    [[AVUser currentUser] saveInBackground];
+    
     [self dismissPopupViewControllerWithanimationType:MJPopupViewAnimationFade];
 }
 //日期代理方法
@@ -190,6 +219,10 @@
     
     cell.setLabel.text = string;
     NSLog(@"%@",cell.setLabel.text);
+    
+   [ [AVUser currentUser] setObject:cell.setLabel.text forKey:@"date"];
+    
+    [[AVUser currentUser] saveInBackground];
     [self dismissPopupViewControllerWithanimationType:MJPopupViewAnimationFade];
     
     

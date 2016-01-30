@@ -7,18 +7,22 @@
 //
 
 #import "NearbyTableViewController.h"
-
+#import "MapViewController.h"
+#import "NearByDetailViewController.h"
 @interface NearbyTableViewController ()
 @property(nonatomic,strong)DataBaseTool * tool;
-//@property(nonatomic,strong)MAMapView * mapView;
 @property(nonatomic,assign)NSUInteger dataIndex;
-
+@property(nonatomic,strong)MapViewController * mapViewController;
 
 @end
 static NSString * const reusedNearByTableCell = @"reusedNearByTableCell";
 
 @implementation NearbyTableViewController
-
+-(MapViewController *)mapViewController{
+    if (!_mapViewController) {
+        _mapViewController = [MapViewController shareMapManagerControl];
+    }return _mapViewController;
+}
 -(CLLocation *)location{
     if (!_location) {
         _location = [[CLLocation alloc]init];
@@ -32,10 +36,8 @@ static NSString * const reusedNearByTableCell = @"reusedNearByTableCell";
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    [self.navigationController setToolbarHidden:YES animated:animated];
-  
     
-
+    [self.navigationController setToolbarHidden:YES animated:animated];
 }
 
 - (void)viewDidLoad {
@@ -54,10 +56,7 @@ static NSString * const reusedNearByTableCell = @"reusedNearByTableCell";
     self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         [self getMoreDataWithCategory:self.category WithDataIndex:self.dataIndex];
     }];
-    
-   
-    
-    
+
     _dataDict = [NSMutableDictionary new];
     _keyArray  = [NSMutableArray new];
     [self.tableView.mj_header beginRefreshing];
@@ -81,7 +80,7 @@ static NSString * const reusedNearByTableCell = @"reusedNearByTableCell";
     [self.tool getDtaWithCategory:self.category location:self.location passData:^(NSDictionary *dict) {
         NSArray * dataArray = dict[@"items"];
         for (NSDictionary * dic in dataArray) {
-            
+    
             NearByModel * model  = [NearByModel initWithDictionary:dic];
             [dic1 setValue:model forKey:model.name];
             [key addObject:model.name];
@@ -113,10 +112,6 @@ static NSString * const reusedNearByTableCell = @"reusedNearByTableCell";
         [self.tableView reloadData];
     }];
     
-    
-    
-    
-    
 }
 //获取更多数据
 -(void)getMoreDataWithCategory:(NSNumber*)category WithDataIndex:(NSInteger)dataIndex{
@@ -133,6 +128,7 @@ static NSString * const reusedNearByTableCell = @"reusedNearByTableCell";
 
 
         for (NSDictionary * dic in dataArray) {
+     
             NearByModel * model  = [NearByModel initWithDictionary:dic];
             if ([_dataDict objectForKey:model.name]==nil ) {
                 [_dataDict setObject:model forKey:model.name];
@@ -180,7 +176,34 @@ static NSString * const reusedNearByTableCell = @"reusedNearByTableCell";
     cell.popularityLabel.text = [NSString stringWithFormat:@"%@",model.popularity];
     return cell;
 }
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+//    [self.navigationController pushViewController:self.mapViewController animated:YES];
+//    AMapNaviPoint *startPoint = [AMapNaviPoint locationWithLatitude:self.location.coordinate.latitude longitude:self.location.coordinate.longitude];
+    NearByModel * model = [_dataDict objectForKey:_keyArray[indexPath.row]];
+//
+//    AMapNaviPoint *endPoint = [AMapNaviPoint locationWithLatitude:[model.location[@"lat"] doubleValue] longitude:[model.location[@"lng"] doubleValue]];
+//    
+//    if ([self.mapViewController isViewLoaded]) {
+//        [self.mapViewController routeCalWithStartPoint:startPoint AndEndPoint:endPoint];
+//    }
+    
+//
+    
+    NearByDetailViewController * detail = [[NearByDetailViewController alloc]init];
+    detail.model = model;
+//   [detail.dataDict setObject:model.address forKey:@"地址"];
+//    [detail.dataDict setObject:model.tel forKey:@"电话"];
+//    [detail.dataDict setObject:model.arrival_type forKey:@"到达方式"];
+//    [detail.dataDict setObject:model.opening_time forKey:@"开放时间"];
+//    
+//    [detail.dataDict setObject:model.d_Description forKey:@"概况"];
 
-
-
+    
+    
+    
+    [self.navigationController pushViewController:detail animated:YES];
+    
+    
+    
+}
 @end

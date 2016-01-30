@@ -19,6 +19,8 @@
     UICollectionViewFlowLayout * flowLayout = [[UICollectionViewFlowLayout alloc]init];
     RecommandCollectionViewController * recommandVC = [[RecommandCollectionViewController alloc]initWithCollectionViewLayout:flowLayout];
     
+    
+    
     UINavigationController * NV = [[UINavigationController alloc]initWithRootViewController:recommandVC];
     NV.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"推荐" image:[UIImage imageNamed:@"iconfont-hand"] selectedImage:[UIImage imageNamed:@""]];
     

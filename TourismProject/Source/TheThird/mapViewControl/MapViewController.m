@@ -33,10 +33,16 @@ BOOL buttonBool = NO;
         }
     });return mapViewControl;
 }
+-(NSSet *)dataSet{
+    if (!_dataSet) {
+        _dataSet = [NSSet new];
+    }return _dataSet;
+}
 -(MAMapView *)mapView{
     if (!_mapView) {
         _mapView = [[MAMapView alloc]initWithFrame:self.view.bounds];
         _mapView.delegate = self;
+        [self.view addSubview:_mapView];
     }return _mapView;
 }
 -(AMapLocationManager *)manager{
@@ -77,7 +83,7 @@ BOOL buttonBool = NO;
     [_naviManager calculateDriveRouteWithStartPoints:startPoints endPoints:endPoints wayPoints:nil drivingStrategy:0];
     
     //步行路径规划
-    [self.naviManager calculateWalkRouteWithStartPoints:startPoints endPoints:endPoints];
+//    [self.naviManager calculateWalkRouteWithStartPoints:startPoints endPoints:endPoints];
 }
 
 // !!!:路径规划成功的回调函数
@@ -94,7 +100,7 @@ BOOL buttonBool = NO;
     
     
     //调用startGPSNavi方法进行实时导航，调用startEmulatorNavi方法进行模拟导航
-    [_naviManager startEmulatorNavi];
+    [_naviManager startGPSNavi];
     //    [_naviManager startGPSNavi];
 }
 
@@ -208,9 +214,7 @@ BOOL buttonBool = NO;
         
         
     }
-    
-  
-    
+
 }
 
 
@@ -227,10 +231,18 @@ BOOL buttonBool = NO;
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    [self.view addSubview:self.mapView];
-    _mapView.showsCompass = YES;
-    _mapView.showsUserLocation = YES;
-    _mapView.userTrackingMode = MAUserTrackingModeFollowWithHeading;
+    self.mapView.showsCompass = YES;
+    self.mapView.showsUserLocation = YES;
+    self.mapView.showsScale = YES;
+
+    self.mapView.compassOrigin = CGPointMake(kWidth-50, 80);
+    self.mapView.scaleOrigin = CGPointMake(10, 70);
+    self.mapView.mapType = MAMapTypeStandard;
+    self.mapView.showsLabels = YES;
+
+    self.mapView.userTrackingMode = MAUserTrackingModeFollow;
+ 
+   
     
 }
 

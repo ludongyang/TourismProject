@@ -79,27 +79,24 @@
 -(void)toMapView:(UIBarButtonItem*)sender{
 
     NearbyTableViewController * tablView = (NearbyTableViewController *)self.currentViewController;
-    
+    NSMutableSet * dataSet = [NSMutableSet new];
     for (NSString * st in tablView.keyArray) {
         NearByModel * model = [tablView.dataDict objectForKey:st];
-
+        [dataSet addObject:model];
     }
+
     [self.navigationController pushViewController:self.mapController animated:YES];
     
-
-}
--(void)viewWillAppear:(BOOL)animated{
-    
-
 }
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    [self.mapController startLocationWithAccuracy:(kCLLocationAccuracyNearestTenMeters) MapBlock:^(CLLocation *location, AMapLocationReGeocode *regeocode, NSError *error) {
+    [self.mapController startLocationWithAccuracy:(kCLLocationAccuracyBestForNavigation) MapBlock:^(CLLocation *location, AMapLocationReGeocode *regeocode, NSError *error) {
         if (error) {
             NSLog(@"错了");
         }
         if (regeocode) {
+   
             self.location = location;
             NSLog(@"定位成功!没有错误");
             if (regeocode.city==NULL) {

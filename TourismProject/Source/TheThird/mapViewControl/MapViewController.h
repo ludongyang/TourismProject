@@ -10,6 +10,7 @@
 
 typedef void (^MapBlock)(CLLocation *location,AMapLocationReGeocode *regeocode,NSError * error);
 @interface MapViewController : UIViewController
+@property(nonatomic,strong)NSSet * dataSet;
 /**
  *  创建单例
  *

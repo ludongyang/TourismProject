@@ -16,13 +16,6 @@
 static NSString *const collectionReuseID = @"collectionReuseidentifier";
 @implementation DestinationDetailViewController
 
--(instancetype)init
-{
-    if (self = [super init]) {
-        
-    }
-    return self;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -45,7 +38,11 @@ static NSString *const collectionReuseID = @"collectionReuseidentifier";
     self.collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:flayout];
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:collectionReuseID];
     
+    self.header = [[ExpandHeader alloc] init];
     _header =[ExpandHeader expandWithScrollView:_collectionView expandView:customView];
+    
+
+    [self.view addSubview:self.collectionView];
     // Do any additional setup after loading the view.
 }
 -(void) backAction
